@@ -214,7 +214,7 @@ body.light-mode :focus-visible {
 }
 .nav-logo {
   font-family: var(--font-title);
-  font-size: 0.68rem; font-weight: 400;
+  font-size: 0.75rem; font-weight: 400;
   letter-spacing: 2.5px; text-transform: uppercase;
   color: var(--text);
   margin-right: auto;
@@ -229,7 +229,7 @@ body.light-mode :focus-visible {
 }
 
 .nav-links a {
-  font-size: 0.56rem; font-weight: 500;
+  font-size: 0.75rem; font-weight: 500;
   letter-spacing: 1.8px; text-transform: uppercase;
   color: rgba(245,245,242,.45); transition: color .2s;
   white-space: nowrap;
@@ -249,7 +249,7 @@ body.light-mode :focus-visible {
   border: 1px solid rgba(245,245,242,0.18);
   padding: .35rem .9rem; border-radius: 2px;
   color: var(--text) !important;
-  font-size: 0.56rem !important;
+  font-size: 0.75rem !important;
   transition: background .2s, border-color .2s !important;
 }
 .nav-cta::after { display: none !important; }
@@ -336,7 +336,7 @@ body.light-mode :focus-visible {
 /* Ligne décorative après label */
 .section-label {
   display: block;
-  font-size: 0.6rem; font-weight: 700;
+  font-size: 0.75rem; font-weight: 700;
   letter-spacing: 3.5px; text-transform: uppercase;
   color: var(--muted); margin-bottom: 1rem;
 }
@@ -377,7 +377,7 @@ hr.sep {
 
 .hero-eyebrow {
   font-family: 'Courier New', monospace;
-  font-size: 0.65rem; letter-spacing: 3px;
+  font-size: 0.75rem; letter-spacing: 3px;
   text-transform: uppercase; color: var(--muted);
   margin-bottom: 1.8rem;
 }
@@ -438,7 +438,7 @@ body.light-mode .hero-rotate-word {
   position: absolute; bottom: 2.5rem; right: var(--pad);
   display: flex; flex-direction: column;
   align-items: center; gap: .4rem;
-  font-size: 0.52rem; font-weight: 700;
+  font-size: 0.75rem; font-weight: 700;
   letter-spacing: 3px; text-transform: uppercase;
   color: rgba(245,245,242,.18);
   animation: fadeUp 1s 1.4s ease both;
@@ -465,7 +465,7 @@ body.light-mode .hero-rotate-word {
 .btn-primary {
   display: inline-flex; align-items: center; gap: .5rem;
   background: var(--text); color: var(--bg);
-  font-family: var(--font); font-size: 0.7rem;
+  font-family: var(--font); font-size: 0.75rem;
   font-weight: 700; letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: .75rem 1.5rem;
@@ -477,7 +477,7 @@ body.light-mode .hero-rotate-word {
 .btn-ghost {
   display: inline-flex; align-items: center; gap: .5rem;
   background: transparent; color: var(--muted);
-  font-family: var(--font); font-size: 0.7rem;
+  font-family: var(--font); font-size: 0.75rem;
   font-weight: 600; letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: .75rem 1.5rem;
@@ -543,7 +543,7 @@ body.light-mode .hero-rotate-word {
 .alt-role { color: var(--muted); width: 40%; }
 .alt-date {
   color: rgba(245,245,242,.2); text-align: right;
-  font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase;
+  font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase;
 }
 
 /* Grille cartes alternance */
@@ -600,7 +600,7 @@ body.light-mode .hero-rotate-word {
 
 .alt-card-tag {
   display: block;
-  font-size: 0.58rem; font-weight: 700;
+  font-size: 0.75rem; font-weight: 700;
   letter-spacing: 2.5px; text-transform: uppercase;
   color: var(--muted); margin-bottom: 1rem;
 }
@@ -611,7 +611,7 @@ body.light-mode .hero-rotate-word {
   color: var(--text);
 }
 .alt-card-company {
-  font-size: 0.7rem; color: var(--muted);
+  font-size: 0.75rem; color: var(--muted);
   letter-spacing: .5px; margin-bottom: .9rem;
 }
 .alt-card-desc {
@@ -622,7 +622,7 @@ body.light-mode .hero-rotate-word {
   display: flex; flex-wrap: wrap; gap: .35rem;
 }
 .alt-card-skills span {
-  font-size: 0.58rem; font-weight: 600;
+  font-size: 0.75rem; font-weight: 600;
   letter-spacing: .5px; text-transform: uppercase;
   border: 1px solid var(--line);
   padding: 2px 7px; border-radius: 2px;
@@ -864,7 +864,7 @@ body.light-mode .hero-rotate-word {
 
 .ue-back {
   display: inline-flex; align-items: center; gap: .6rem;
-  font-size: 0.68rem; font-weight: 600;
+  font-size: 0.75rem; font-weight: 600;
   letter-spacing: 1.5px; text-transform: uppercase;
   color: var(--muted); cursor: pointer;
   border: none; background: none; padding: 0;
@@ -994,7 +994,7 @@ body.light-mode .ue-nav-tab.active {
   margin-bottom: 1.1rem;
 }
 .proj-tags span {
-  font-size: 0.56rem; font-weight: 600;
+  font-size: 0.75rem; font-weight: 600;
   letter-spacing: .5px; text-transform: uppercase;
   color: rgba(245,245,242,.55);
   border: 1px solid rgba(245,245,242,.12);
@@ -1003,7 +1003,7 @@ body.light-mode .ue-nav-tab.active {
 
 .proj-link {
   display: inline-flex; align-items: center; gap: .45rem;
-  font-size: 0.68rem; font-weight: 700;
+  font-size: 0.75rem; font-weight: 700;
   letter-spacing: 1px; text-transform: uppercase;
   color: var(--muted);
   border: 1px solid var(--line);
@@ -1130,7 +1130,7 @@ body.light-mode .ue-nav-tab.active {
 
 .contact-social { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 .contact-social a {
-  font-size: 0.65rem; font-weight: 700;
+  font-size: 0.75rem; font-weight: 700;
   letter-spacing: 1.5px; text-transform: uppercase;
   color: var(--muted); transition: color .2s;
 }
@@ -1330,7 +1330,7 @@ footer {
   background: transparent; border: none;
   color: rgba(245,245,242,.28);
   font-family: var(--font);
-  font-size: 0.6rem; font-weight: 700;
+  font-size: 0.75rem; font-weight: 700;
   letter-spacing: 1px; text-transform: uppercase;
   padding: .32rem .65rem; cursor: pointer;
   transition: color .2s, background .2s;
