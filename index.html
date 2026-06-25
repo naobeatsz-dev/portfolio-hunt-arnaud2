@@ -38,17 +38,19 @@
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="https://unpkg.com">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<!-- Google Fonts -->
+<!-- Font Awesome — chargement différé -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+<!-- Google Fonts — display swap pour éviter le blocage -->
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/akira-expanded" rel="stylesheet">
 <!-- i18n -->
 <script src="Java/i18n.js" defer></script>
 <!-- JS principal -->
-<script src="Java/Java.js?v=15" defer></script>
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="Java/Java.js?v=16" defer></script>
+<!-- AOS — chargement différé -->
+<link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
 <link rel="stylesheet" href="CSS/portfolio.css">
@@ -77,7 +79,7 @@
 
 <!-- Vidéo de fond -->
 <div id="video-bg-wrap" aria-hidden="true">
-  <video id="video-bg" autoplay muted loop playsinline preload="auto"></video>
+  <video id="video-bg" autoplay muted loop playsinline preload="none"></video>
   <script>
     (function(){
       var v=['Image/INSTA_1.mp4','Image/vidéo/NAOYAH X ATOX PLAYDITUNE.mp4'];
@@ -145,7 +147,7 @@
     <span class="section-line" aria-hidden="true"></span>
     <div class="about-grid">
       <div class="about-img-wrap">
-        <img src="Image/DSC00284.jpg" alt="Hunt Arnaud" class="about-img" id="about-img-parallax">
+        <img src="Image/DSC00284.jpg" alt="Hunt Arnaud" class="about-img" id="about-img-parallax" loading="lazy">
       </div>
       <div class="about-right">
         <h2 class="section-title" data-i18n="about.heading">Hunt Arnaud</h2>
