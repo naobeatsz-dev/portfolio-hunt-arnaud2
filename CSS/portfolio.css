@@ -1487,10 +1487,12 @@ body.light-mode {
 body.light-mode ::-webkit-scrollbar-thumb { background: rgba(17,17,16,.2); }
 body.light-mode ::-webkit-scrollbar-thumb:hover { background: rgba(17,17,16,.32); }
 
-/* Video — laisse la texture transparaître subtilement */
-body.light-mode #video-bg-wrap { background: #f0ede7; }
-body.light-mode #video-bg.loaded { opacity: 0.35; filter: brightness(1.2); }
-body.light-mode #video-overlay { background: rgba(240,237,231,.45); }
+/* Video — fond noir transparent en mode clair aussi */
+body.light-mode #video-bg-wrap { background: #080808; }
+body.light-mode #video-bg.loaded { opacity: 0.22; }
+body.light-mode #video-overlay {
+  background: linear-gradient(160deg, rgba(8,8,8,0.75) 0%, rgba(8,8,8,0.52) 40%, rgba(8,8,8,0.82) 100%);
+}
 
 /* Loader */
 body.light-mode #loader { background: #f0ede7; }
