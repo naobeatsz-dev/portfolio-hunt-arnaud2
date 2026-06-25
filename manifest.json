@@ -1,0 +1,18 @@
+{
+  "name": "Hunt Arnaud — Graphic Designer",
+  "short_name": "Hunt Arnaud",
+  "description": "Portfolio de Hunt Arnaud, Graphic Designer & Motion. BUT MMI, Guadeloupe.",
+  "start_url": "/Portfolio-Hunt-Arnaud/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

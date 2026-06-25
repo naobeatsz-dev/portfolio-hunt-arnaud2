@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud/sitemap.xml

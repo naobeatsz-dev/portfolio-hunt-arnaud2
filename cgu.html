@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGU — Hunt Arnaud</title>
+  <meta name="description" content="Conditions Générales d'Utilisation du portfolio de Hunt Arnaud, designer graphique.">
+  <meta name="author" content="Hunt Arnaud">
+  <meta name="theme-color" content="#080808">
+  <link rel="canonical" href="https://naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud/cgu.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CGU — Hunt Arnaud">
+  <meta property="og:url" content="https://naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud/cgu.html">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/portfolio.css">
+  <script src="Java/Java.js?v=14" defer></script>
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <div id="video-bg-wrap" aria-hidden="true">
+    <video id="video-bg" autoplay muted loop playsinline preload="auto"></video>
+    <script>
+      (function(){
+        // ⬇️ REMPLACE LES CHEMINS CI-DESSOUS PAR TES VRAIS FICHIERS VIDÉO
+        // v[0] = vidéo fond mode sombre  (ex: 'Image/ma-video-sombre.mp4')
+        // v[1] = vidéo fond mode clair   (ex: 'Image/ma-video-claire.mp4')
+        var v=[
+          'CHEMIN_VIDEO_SOMBRE',   // ← mode sombre
+          'CHEMIN_VIDEO_CLAIRE'    // ← mode clair
+        ];
+        var el=document.getElementById('video-bg');
+        var s=document.createElement('source');
+        s.type='video/mp4';
+        s.src=localStorage.getItem('portfolio-theme')==='light'?v[1]:v[0|(Math.random()*v.length)];
+        el.appendChild(s);
+      })();
+    </script>
+    <div id="video-overlay"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo" aria-label="Retour au portfolio">
+      <i class="fas fa-arrow-left" style="margin-right:.5rem;font-size:.65rem;opacity:.6;"></i>Hunt Arnaud
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#about">À Propos</a>
+      <a href="index.html#skills">Compétences</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#alternance">Alternance</a>
+      <a href="index.html#contact" class="nav-cta">Contact →</a>
+    </div>
+    <div id="lang-switcher" role="group" aria-label="Sélection de langue">
+      <button class="lang-btn lang-btn--active" data-lang="fr" aria-pressed="true">FR</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <button id="theme-toggle" aria-label="Basculer le thème"><i class="fas fa-sun"></i></button>
+    <button id="nav-burger" class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="legal-page">
+    <div class="legal-wrap">
+
+      <!-- FRANÇAIS -->
+      <div class="lang-block visible" id="block-fr">
+        <span class="legal-updated">Mis à jour — Juin 2025</span>
+        <h1 class="legal-h1">Conditions<br>d'Utilisation</h1>
+        <div class="legal-body">
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">01</span>
+              <span class="legal-item-title">Objet</span>
+            </div>
+            <p>Les présentes Conditions Générales d'Utilisation définissent les règles d'accès et d'utilisation du site portfolio de Hunt Arnaud, accessible à l'adresse <strong>naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud</strong>.</p>
+            <p>En naviguant sur ce site, vous acceptez ces conditions dans leur intégralité.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">02</span>
+              <span class="legal-item-title">Accès au site</span>
+            </div>
+            <p>Le site est accessible gratuitement et sans inscription. Hunt Arnaud se réserve le droit de modifier, suspendre ou interrompre l'accès au site à tout moment et sans préavis, notamment pour des raisons de maintenance.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">03</span>
+              <span class="legal-item-title">Utilisation du contenu</span>
+            </div>
+            <p>L'ensemble des contenus présents sur ce site (textes, images, vidéos, créations graphiques) sont la propriété exclusive de Hunt Arnaud, sauf mention contraire.</p>
+            <p>Toute utilisation, reproduction ou diffusion sans autorisation écrite préalable est strictement interdite.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">04</span>
+              <span class="legal-item-title">Responsabilité</span>
+            </div>
+            <p>Hunt Arnaud ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site, d'une interruption de service ou de l'inexactitude des informations présentées.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">05</span>
+              <span class="legal-item-title">Liens externes</span>
+            </div>
+            <p>Ce site peut contenir des liens vers des sites tiers. Hunt Arnaud n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">06</span>
+              <span class="legal-item-title">Droit applicable</span>
+            </div>
+            <p>Les présentes CGU sont soumises au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">07</span>
+              <span class="legal-item-title">Contact</span>
+            </div>
+            <p>Pour toute question relative aux présentes CGU, contactez-moi via le formulaire disponible sur la page <a href="index.html#contact">Contact</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGLISH -->
+      <div class="lang-block" id="block-en">
+        <span class="legal-updated">Updated — June 2025</span>
+        <h1 class="legal-h1">Terms<br>of Use</h1>
+        <div class="legal-body">
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">01</span>
+              <span class="legal-item-title">Purpose</span>
+            </div>
+            <p>These Terms of Use define the rules for accessing and using Hunt Arnaud's portfolio website, accessible at <strong>naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud</strong>.</p>
+            <p>By browsing this site, you agree to these terms in their entirety.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">02</span>
+              <span class="legal-item-title">Access to the site</span>
+            </div>
+            <p>The site is freely accessible without registration. Hunt Arnaud reserves the right to modify, suspend or interrupt access to the site at any time and without notice, particularly for maintenance reasons.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">03</span>
+              <span class="legal-item-title">Use of content</span>
+            </div>
+            <p>All content on this site (texts, images, videos, graphic creations) is the exclusive property of Hunt Arnaud, unless otherwise stated.</p>
+            <p>Any use, reproduction or distribution without prior written authorisation is strictly prohibited.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">04</span>
+              <span class="legal-item-title">Liability</span>
+            </div>
+            <p>Hunt Arnaud cannot be held liable for direct or indirect damages resulting from the use of the site, a service interruption or inaccuracy of the information presented.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">05</span>
+              <span class="legal-item-title">External links</span>
+            </div>
+            <p>This site may contain links to third-party websites. Hunt Arnaud has no control over these sites and accepts no responsibility for their content.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">06</span>
+              <span class="legal-item-title">Applicable law</span>
+            </div>
+            <p>These Terms of Use are governed by French law. In the event of a dispute, French courts shall have sole jurisdiction.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">07</span>
+              <span class="legal-item-title">Contact</span>
+            </div>
+            <p>For any questions regarding these Terms, contact me via the form on the <a href="index.html#contact">Contact</a> page.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESPAÑOL -->
+      <div class="lang-block" id="block-es">
+        <span class="legal-updated">Actualizado — Junio 2025</span>
+        <h1 class="legal-h1">Condiciones<br>de Uso</h1>
+        <div class="legal-body">
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">01</span>
+              <span class="legal-item-title">Objeto</span>
+            </div>
+            <p>Las presentes Condiciones de Uso definen las normas de acceso y uso del sitio portfolio de Hunt Arnaud, accesible en <strong>naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud</strong>.</p>
+            <p>Al navegar por este sitio, usted acepta estas condiciones en su totalidad.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">02</span>
+              <span class="legal-item-title">Acceso al sitio</span>
+            </div>
+            <p>El sitio es de acceso gratuito y sin registro. Hunt Arnaud se reserva el derecho de modificar, suspender o interrumpir el acceso al sitio en cualquier momento y sin previo aviso, especialmente por razones de mantenimiento.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">03</span>
+              <span class="legal-item-title">Uso del contenido</span>
+            </div>
+            <p>Todo el contenido de este sitio (textos, imágenes, vídeos, creaciones gráficas) es propiedad exclusiva de Hunt Arnaud, salvo indicación contraria.</p>
+            <p>Cualquier uso, reproducción o difusión sin autorización previa y por escrito está estrictamente prohibido.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">04</span>
+              <span class="legal-item-title">Responsabilidad</span>
+            </div>
+            <p>Hunt Arnaud no podrá ser considerado responsable de los daños directos o indirectos derivados del uso del sitio, una interrupción del servicio o la inexactitud de la información presentada.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">05</span>
+              <span class="legal-item-title">Enlaces externos</span>
+            </div>
+            <p>Este sitio puede contener enlaces a sitios de terceros. Hunt Arnaud no ejerce ningún control sobre estos sitios y declina toda responsabilidad respecto a su contenido.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">06</span>
+              <span class="legal-item-title">Legislación aplicable</span>
+            </div>
+            <p>Las presentes Condiciones de Uso están sujetas a la legislación francesa. En caso de litigio, los tribunales franceses serán los únicos competentes.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">07</span>
+              <span class="legal-item-title">Contacto</span>
+            </div>
+            <p>Para cualquier pregunta relativa a estas Condiciones, contácteme a través del formulario de la página <a href="index.html#contact">Contacto</a>.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.legal-wrap -->
+  </main>
+
+  <script>
+    function switchLegalLang(lang) {
+      document.querySelectorAll('.lang-block').forEach(function(b) { b.classList.remove('visible'); });
+      var b = document.getElementById('block-' + lang);
+      if (b) b.classList.add('visible');
+      document.querySelectorAll('#lang-switcher .lang-btn').forEach(function(btn) {
+        var active = btn.dataset.lang === lang;
+        btn.classList.toggle('lang-btn--active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem('portfolio-lang', lang);
+    }
+    document.querySelectorAll('#lang-switcher .lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() { switchLegalLang(btn.dataset.lang); });
+    });
+    switchLegalLang(localStorage.getItem('portfolio-lang') || 'fr');
+  </script>
+
+</body>
+</html>

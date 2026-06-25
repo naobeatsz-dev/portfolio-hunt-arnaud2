@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hunt Arnaud — Designer &amp; Créateur digital</title>
+<meta name="description" content="Portfolio de Hunt Arnaud, Designer & Créateur digital. Identité visuelle, audiovisuel, création de contenu. BUT MMI, Guadeloupe.">
+<meta name="author" content="Hunt Arnaud">
+<meta name="theme-color" content="#080808">
+
+<!-- Canonical & SEO -->
+<link rel="canonical" href="https://naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hunt Arnaud — Designer &amp; Créateur digital &amp; Motion">
+<meta property="og:description" content="Identité visuelle, montage vidéo, motion design. BUT MMI, Guadeloupe.">
+<meta property="og:url" content="https://naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud/">
+<meta property="og:image" content="https://naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud/Image/DSC00284.jpg">
+<meta property="og:image:alt" content="Hunt Arnaud — Designer &amp; Créateur digital">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Hunt Arnaud Portfolio">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hunt Arnaud — Designer &amp; Créateur digital &amp; Motion">
+<meta name="twitter:description" content="Identité visuelle, montage vidéo, motion design. BUT MMI, Guadeloupe.">
+<meta name="twitter:image" content="https://naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud/Image/DSC00284.jpg">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+
+<!-- Preconnect ressources externes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://unpkg.com">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/akira-expanded" rel="stylesheet">
+<!-- i18n -->
+<script src="Java/i18n.js" defer></script>
+<!-- JS principal -->
+<script src="Java/Java.js?v=15" defer></script>
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
+<link rel="stylesheet" href="CSS/portfolio.css">
+</head>
+
+<body>
+
+<a href="#hero" class="skip-link">Aller au contenu principal</a>
+
+<!-- ================================================
+     LOADER
+================================================ -->
+<div id="loader" role="status" aria-label="Chargement">
+  <span class="loader-count" id="loader-count">00</span>
+  <span class="loader-line" aria-hidden="true"></span>
+</div>
+
+<!-- ================================================
+     NAV
+================================================ -->
+<!-- Grain -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Blob ambiant orange -->
+<div id="ambient-blob" aria-hidden="true"></div>
+
+<!-- Vidéo de fond -->
+<div id="video-bg-wrap" aria-hidden="true">
+  <video id="video-bg" autoplay muted loop playsinline preload="auto"></video>
+  <script>
+    (function(){
+      var v=['Image/INSTA_1.mp4','Image/vidéo/NAOYAH X ATOX PLAYDITUNE.mp4'];
+      var el=document.getElementById('video-bg');
+      var s=document.createElement('source');
+      s.type='video/mp4';
+      s.src=v[Math.floor(Math.random()*v.length)];
+      el.appendChild(s);
+    })();
+  </script>
+  <div id="video-overlay"></div>
+</div>
+
+<nav id="nav">
+  <a href="#hero" class="nav-logo">Hunt Arnaud</a>
+  <div class="nav-links" id="nav-links">
+    <a href="#about" data-i18n="nav.about">À Propos</a>
+    <a href="#alternance" data-i18n="nav.alternance">Alternance</a>
+    <a href="#skills" data-i18n="nav.skills">Compétences</a>
+    <a href="#interface" data-i18n="nav.interface">Interface 2025</a>
+    <a href="#services" data-i18n="nav.services">Services</a>
+    <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact →</a>
+  </div>
+  <div id="lang-switcher" role="group" aria-label="Langue">
+    <button class="lang-btn lang-btn--active" data-lang="fr" onclick="applyTranslations('fr')">FR</button>
+    <button class="lang-btn" data-lang="en" onclick="applyTranslations('en')">EN</button>
+    <button class="lang-btn" data-lang="es" onclick="applyTranslations('es')">ES</button>
+  </div>
+  <button id="theme-toggle" aria-label="Activer le mode clair" aria-pressed="false"><i class="fas fa-sun"></i></button>
+  <button id="nav-burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('nav-mobile-open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ================================================
+     HERO
+================================================ -->
+<section id="hero">
+  <div class="parallax-target" data-parallax-speed="0.28">
+    <p class="hero-eyebrow" data-i18n="hero.eyebrow">Designer & Créateur digital · BUT MMI · Guadeloupe</p>
+    <h1 class="hero-title"><span id="hero-rotate" class="hero-rotate-word">Design.</span></h1>
+    <span class="hero-divider" aria-hidden="true"></span>
+    <div class="hero-row">
+      <p class="hero-desc" data-i18n="about.p2">Je suis HUNT ARNAUD, étudiant en 3e année de BUT MMI, passionné par le design, la vidéo et la création de contenu.</p>
+      <div class="hero-actions">
+        <a href="#skills" class="btn-primary" data-i18n="hero.cta.projects">Voir mes projets</a>
+        <button class="btn-ghost" onclick="openCV()" data-i18n="hero.cta.cv" aria-label="Voir mon CV">CV</button>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="hero-scroll-line"></span>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ================================================
+     ABOUT
+================================================ -->
+<section id="about" class="section-bg">
+  <div class="p-section parallax-target" data-parallax-speed="0.12">
+    <span class="section-label" data-i18n="about.label">À Propos</span>
+    <span class="section-line" aria-hidden="true"></span>
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="Image/DSC00284.jpg" alt="Hunt Arnaud" class="about-img" id="about-img-parallax">
+      </div>
+      <div class="about-right">
+        <h2 class="section-title" data-i18n="about.heading">Hunt Arnaud</h2>
+        <p data-i18n="about.p1">Bienvenue sur mon portfolio, un espace où je partage mes créations visuelles et mes projets.</p>
+        <p data-i18n="about.p2.long">Étudiant en 3e année de BUT MMI (Métiers du Multimédia et de l'Internet). Créatif passionné par le design graphique, l'audiovisuel et la communication visuelle.</p>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <a href="https://www.butmmi.fr" class="btn-ghost" target="_blank" rel="noopener noreferrer" data-i18n="about.formation">Ma Formation</a>
+          <button class="btn-primary" onclick="openCV()" data-i18n="about.cv" aria-label="Voir mon CV">Voir mon CV</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ================================================
+     ALTERNANCE
+================================================ -->
+<section id="alternance" class="section-bg">
+  <div class="p-section parallax-target" data-parallax-speed="0.09">
+    <span class="section-label" data-i18n="alt.label">Alternance 2024–2025</span>
+    <span class="section-line" aria-hidden="true"></span>
+
+    <table class="alt-table" aria-label="Expériences en alternance">
+      <thead class="sr-only">
+        <tr><th>Entreprise</th><th>Rôle</th><th>Période</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="alt-co">KOncept Business</td>
+          <td class="alt-role" data-i18n="alt.role.koncept">Communication digitale &amp; Création de contenu</td>
+          <td class="alt-date">2024 →</td>
+        </tr>
+        <tr>
+          <td class="alt-co">Guadeloupe Recyclerie Solidaire</td>
+          <td class="alt-role" data-i18n="alt.role.recyclerie">Communication digitale &amp; Création de contenu</td>
+          <td class="alt-date">2024 →</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alt-carousel-wrap">
+      <div class="alt-carousel-simple">
+
+        <div class="alt-card">
+          <div class="alt-card-body">
+            <span class="alt-card-tag">Mission 1</span>
+            <p class="alt-card-title">Communication digitale</p>
+            <p class="alt-card-company">KOncept Business &amp; GRS</p>
+            <p class="alt-card-desc">Gestion des réseaux sociaux, création de visuels et de contenus pour les plateformes digitales. Mise en place de stratégies de communication adaptées aux objectifs de chaque structure.</p>
+            <div class="alt-card-skills"><span>Photoshop</span><span>Canva</span><span>Instagram</span><span>Stratégie</span></div>
+          </div>
+        </div>
+
+        <div class="alt-card">
+          <div class="alt-card-body">
+            <span class="alt-card-tag">Mission 2</span>
+            <p class="alt-card-title">Création de contenu</p>
+            <p class="alt-card-company">KOncept Business &amp; GRS</p>
+            <p class="alt-card-desc">Réalisation de vidéos promotionnelles, captation d'événements, montage et post-production. Conception de supports visuels print et digital pour la communication des entreprises.</p>
+            <div class="alt-card-skills"><span>Premiere Pro</span><span>After Effects</span><span>Vidéo</span><span>Design</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="alt-actions">
+      <a href="https://drive.google.com/file/d/1w3fHGfDprge1An9373WhZcal_X5WrRIF/view?usp=share_link" class="btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="alt.rapport">
+        <i class="fas fa-file-alt" style="margin-right:.45rem;"></i> Rapport d'activité
+      </a>
+      <a href="https://www.instagram.com/grs_association/" class="btn-ghost" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram" style="margin-right:.4rem;"></i> GRS Association
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ================================================
+     COMPÉTENCES
+================================================ -->
+<section id="skills" class="section-bg">
+  <div class="p-section parallax-target" data-parallax-speed="0.06">
+    <span class="section-label" data-i18n="skills.label">Compétences BUT MMI</span>
+    <span class="section-line" aria-hidden="true"></span>
+
+    <div class="skills-reel-wrap">
+      <div class="skills-reel" id="skills-reel">
+
+        <div class="skill-card" data-ue="comprendre" role="button" tabindex="0" aria-label="Comprendre — 3 projets">
+          <div class="skill-card-bg" style="background-image:url('Image/ces.png')" aria-hidden="true"></div>
+          <span class="skill-card-idx">01</span>
+          <h3 class="skill-card-title" data-i18n="ue.comprendre">Comprendre</h3>
+          <div class="skill-card-tags"><span>Analyse d'usages</span><span>Recherche UX</span><span>Storytelling</span></div>
+          <ul class="skill-card-projects">
+            <li>Storytelling Café Ermantin</li>
+            <li>Projet CES 2026</li>
+            <li>Stratégie Ansanm Cowork</li>
+          </ul>
+          <div class="skill-card-foot">
+            <span class="skill-card-count" data-i18n="ue.comprendre.btn">5 Projets</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </div>
+          <span class="skill-card-num" aria-hidden="true">01</span>
+        </div>
+
+        <div class="skill-card" data-ue="concevoir" role="button" tabindex="0" aria-label="Concevoir — 5 projets">
+          <div class="skill-card-bg" style="background-image:url('Image/RVF%20KANN%205.jpg')" aria-hidden="true"></div>
+          <span class="skill-card-idx">02</span>
+          <h3 class="skill-card-title" data-i18n="ue.concevoir">Concevoir</h3>
+          <div class="skill-card-tags"><span>Design thinking</span><span>Identité visuelle</span><span>Conception UX</span></div>
+          <ul class="skill-card-projects">
+            <li>Logo &amp; Charte NOVA</li>
+            <li>Cover KANN — RVF</li>
+            <li>BLOK x Aqua Music Festival</li>
+          </ul>
+          <div class="skill-card-foot">
+            <span class="skill-card-count" data-i18n="ue.concevoir.btn">9 Projets</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </div>
+          <span class="skill-card-num" aria-hidden="true">02</span>
+        </div>
+
+        <div class="skill-card" data-ue="exprimer" role="button" tabindex="0" aria-label="Exprimer — 7 projets">
+          <div class="skill-card-bg" style="background-image:url('Image/dont%20wait.png')" aria-hidden="true"></div>
+          <span class="skill-card-idx">03</span>
+          <h3 class="skill-card-title" data-i18n="ue.exprimer">Exprimer</h3>
+          <div class="skill-card-tags"><span>Design graphique</span><span>Vidéo</span><span>Motion</span></div>
+          <ul class="skill-card-projects">
+            <li>Vlog "A Day in My Life"</li>
+            <li>Affiche Octobre Rose</li>
+            <li>Documentaire — Moi, ma Musique</li>
+          </ul>
+          <div class="skill-card-foot">
+            <span class="skill-card-count" data-i18n="ue.exprimer.btn">7 Projets</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </div>
+          <span class="skill-card-num" aria-hidden="true">03</span>
+        </div>
+
+        <div class="skill-card" data-ue="developper" role="button" tabindex="0" aria-label="Développer — 3 projets">
+          <div class="skill-card-bg" style="background-image:url('Image/portfolioi.png')" aria-hidden="true"></div>
+          <span class="skill-card-idx">04</span>
+          <h3 class="skill-card-title" data-i18n="ue.developper">Développer</h3>
+          <div class="skill-card-tags"><span>HTML/CSS</span><span>JavaScript</span><span>Responsive</span></div>
+          <ul class="skill-card-projects">
+            <li>Portfolio Web Personnel</li>
+          </ul>
+          <div class="skill-card-foot">
+            <span class="skill-card-count" data-i18n="ue.developper.btn">1 Projet</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </div>
+          <span class="skill-card-num" aria-hidden="true">04</span>
+        </div>
+
+        <div class="skill-card" data-ue="entreprendre" role="button" tabindex="0" aria-label="Entreprendre — 11 projets">
+          <div class="skill-card-bg" style="background-image:url('Image/s.png')" aria-hidden="true"></div>
+          <span class="skill-card-idx">05</span>
+          <h3 class="skill-card-title" data-i18n="ue.entreprendre">Entreprendre</h3>
+          <div class="skill-card-tags"><span>Chef de projet</span><span>Leadership</span><span>Innovation</span></div>
+          <ul class="skill-card-projects">
+            <li>Publicité Glazed Smash Burger</li>
+            <li>Micro-trottoir CPME</li>
+            <li>Jury FEMI</li>
+          </ul>
+          <div class="skill-card-foot">
+            <span class="skill-card-count" data-i18n="ue.entreprendre.btn">12 Projets</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </div>
+          <span class="skill-card-num" aria-hidden="true">05</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Navigation arrows -->
+    <div class="skills-reel-nav" role="group" aria-label="Navigation du carrousel">
+      <button class="skills-reel-btn" id="reel-prev" aria-label="Carte précédente">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+      </button>
+      <button class="skills-reel-btn" id="reel-next" aria-label="Carte suivante">
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     SECTIONS PROJETS UE (cachées par défaut)
+================================================ -->
+
+<!-- UE Comprendre -->
+<section id="ue-comprendre" class="ue-projects-section hidden">
+  <div class="wrap" style="padding-top:clamp(4rem,8vw,7rem);padding-bottom:clamp(4rem,8vw,7rem);">
+    <button class="ue-back" onclick="showMainSkills()"><i class="fas fa-arrow-left"></i> <span data-i18n="back.skills">Retour aux compétences</span></button>
+    <div class="ue-section-head">
+      <h2 data-i18n="ue.comprendre">Comprendre</h2>
+      <p data-i18n="ue.comprendre.sub">Projets d'analyse et de recherche utilisateur</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card" data-role="Storyteller / Rédacteur" data-tools="Google Docs, Canva">
+        <div class="proj-img-wrap"><img src="Image/ermantin.png" alt="Storytelling Café Ermantin" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Storytelling Café Ermantin</p>
+          <p class="proj-desc">Création d'un storytelling touchant pour la marque locale Café Ermantin. Narration émotionnelle authentique qui connecte la marque à son audience.</p>
+          <div class="proj-tags"><span>Storytelling</span><span>Marque locale</span><span>Communication</span></div>
+          <a href="https://drive.google.com/file/d/1FGiim8ejPq7dlOFfEX8UD4MPg7LMUmhv/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Analyste budgétaire" data-tools="Excel, Google Sheets, Trello">
+        <div class="proj-img-wrap"><img src="Image/ces.png" alt="Projet CES 2026" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Projet CES 2026 / Interface 2025</p>
+          <p class="proj-desc">Analyse budgétaire et gestion de projet pour le voyage au salon du numérique de Las Vegas. Rôle d'analyste en coopération.</p>
+          <div class="proj-tags"><span>Analyse budgétaire</span><span>Gestion de projet</span><span>CES Las Vegas</span></div>
+          <a href="https://drive.google.com/file/d/1FwzTSqVFNR5iHIFd4WyLO2BTPePxqPH-/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Stratège communication" data-tools="Google Docs, Miro, Canva">
+        <div class="proj-img-wrap"><img src="Image/ansanm.png" alt="Ansanm Cowork" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Stratégie Ansanm Cowork</p>
+          <p class="proj-desc">Élaboration d'une stratégie de communication complète pour un espace de coworking. Analyse des besoins utilisateurs et du marché local.</p>
+          <div class="proj-tags"><span>Stratégie</span><span>Coworking</span><span>UX Research</span></div>
+          <a href="https://drive.google.com/file/d/1UshSdQ-am9VDZAsLCfeqakaw9gBg6UPd/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Membre du jury" data-tools="—"
+           data-gallery="Image/femi.png,Image/projets/entreprendre/jury-femi/femi-2.png,Image/projets/entreprendre/jury-femi/cc.png">
+        <div class="proj-img-wrap"><img src="Image/femi.png" alt="Jury FEMI" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Jury FEMI — 29e &amp; 30e édition</p>
+          <p class="proj-desc">Participation deux années consécutives au Festival Régional et International du Cinéma de Guadeloupe (FEMI) en tant que membre du jury. Première année : jury courts-métrages documentaires, analyse critique et délibération. Deuxième année (30e anniversaire du FEMI) : jury films d'animation, évaluation artistique et attribution des prix.</p>
+          <div class="proj-tags"><span>Jury</span><span>FEMI</span><span>Analyse critique</span><span>Cinéma</span></div>
+          <span class="proj-link disabled"><i class="fas fa-clock"></i> Prochainement</span>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Rédacteur / Analyste" data-tools="Google Docs, Canva"
+           data-gallery="Image/projets/comprendre/ppp-cover.png">
+        <div class="proj-img-wrap"><img src="Image/projets/comprendre/ppp-cover.png" alt="Dossier PPP" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Dossier PPP — Projet Personnel et Professionnel</p>
+          <p class="proj-desc">Rédaction d'un dossier complet de réflexion sur mon parcours, mes compétences et mon projet professionnel dans le cadre du BUT MMI. Analyse de mes expériences, définition de mes objectifs et construction de mon identité professionnelle.</p>
+          <div class="proj-tags"><span>PPP</span><span>Projet professionnel</span><span>Réflexion</span><span>BUT MMI</span></div>
+          <a href="Image/projets/comprendre/dossier-ppp.pdf" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Consulter le dossier</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UE Entreprendre -->
+<section id="ue-entreprendre" class="ue-projects-section hidden">
+  <div class="wrap" style="padding-top:clamp(4rem,8vw,7rem);padding-bottom:clamp(4rem,8vw,7rem);">
+    <button class="ue-back" onclick="showMainSkills()"><i class="fas fa-arrow-left"></i> <span data-i18n="back.skills">Retour aux compétences</span></button>
+    <div class="ue-section-head">
+      <h2 data-i18n="ue.entreprendre">Entreprendre</h2>
+      <p data-i18n="ue.entreprendre.sub">Projets entrepreneuriaux, gestion d'équipe et initiatives réelles</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card" data-role="Assistant cadreur" data-tools="Premiere Pro">
+        <div class="proj-img-wrap"><img src="Image/dévelloper/GLAZED.jpg" alt="Glazed Smash Burger" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Vidéo Glazed Smash Burger</p>
+          <p class="proj-desc">Assistant cadreur sur le tournage des vidéos promotionnelles pour l'ouverture du restaurant Glazed Smash Burger. L'objectif était de mettre en valeur les burgers à travers des plans dynamiques destinés à promouvoir le lancement.</p>
+          <div class="proj-tags"><span>Captation</span><span>Cadrage</span><span>Promotion</span></div>
+          <a href="https://www.instagram.com/glazedsmashburger" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Chef de projet" data-tools="Premiere Pro, Canva">
+        <div class="proj-img-wrap"><img src="Image/s.png" alt="Micro-trottoir CPME" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Micro-trottoir CPME</p>
+          <p class="proj-desc">Pilotage complet d'un micro-trottoir sur l'égalité hommes-femmes au travail, en collaboration avec la CPME. Chef de projet de A à Z.</p>
+          <div class="proj-tags"><span>Chef de projet</span><span>CPME</span><span>Égalité hommes-femmes</span></div>
+          <a href="https://drive.google.com/file/d/1zMoBWJk409OSqcOOu51A7S3ehM5SAUmb/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Chef de projet / Directeur créatif" data-tools="Canva, Instagram"
+           data-gallery="Image/&.png,Image/projets/entreprendre/instagram-iut/jane-2025.mp4">
+        <div class="proj-img-wrap"><img src="Image/&.png" alt="Instagram IUT Guadeloupe" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Instagram IUT Guadeloupe</p>
+          <p class="proj-desc">Direction de la création du compte Instagram de l'IUT de Guadeloupe. Management de la classe entière sur une semaine.</p>
+          <div class="proj-tags"><span>Chef de projet</span><span>Social media</span><span>Management</span></div>
+          <a href="https://www.instagram.com/iutguadeloupe" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Membre du jury" data-tools="—">
+        <div class="proj-img-wrap"><img src="Image/femi.png" alt="Jury FEMI" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Jury FEMI — 29e &amp; 30e édition</p>
+          <p class="proj-desc">Participation deux années consécutives au Festival Régional et International du Cinéma de Guadeloupe (FEMI) en tant que membre du jury. Première année : jury courts-métrages documentaires, analyse critique et délibération. Deuxième année (30e anniversaire du FEMI) : jury films d'animation, évaluation artistique et attribution des prix.</p>
+          <div class="proj-tags"><span>Jury</span><span>FEMI</span><span>Documentaire</span><span>Animation</span><span>Cinéma</span></div>
+          <span class="proj-link disabled"><i class="fas fa-clock"></i> Prochainement</span>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Cadreur" data-tools="Premiere Pro"
+           data-gallery="Image/ yir.png,Image/projets/entreprendre/soliss-recap/soliss-cover.png">
+        <div class="proj-img-wrap"><img src="Image/ yir.png" alt="La SOLIS — Recap" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">La SOLIS — Recap</p>
+          <p class="proj-desc">Cadreur pour La SOLIS, un nouveau concept de soirée chill &amp; élégante à Basse-Terre mêlant cocktails d'exception et sélection musicale pointue. Captation de l'événement en collaboration avec le vidéaste Byprodmxf. Montage dynamique et immersif.</p>
+          <div class="proj-tags"><span>Captation</span><span>Cadrage</span><span>Événementiel</span><span>Byprodmxf</span></div>
+          <a href="https://www.instagram.com/reel/DYamO0YP5sU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i> Vidéo</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Réalisateur / Monteur" data-tools="Premiere Pro">
+        <div class="proj-img-wrap"><img src="Image/16H-18H.jpg" alt="L'Aiguille d'Iris — GRS" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">L'Aiguille d'Iris — Vidéos promotionnelles</p>
+          <p class="proj-desc">Réalisation de 4 vidéos promotionnelles pour l'atelier L'Aiguille d'Iris de la Guadeloupe Recyclerie Solidaire, dans le cadre de mon alternance. L'objectif était de promouvoir les ateliers de couture et de sensibiliser le public aux activités de la structure.</p>
+          <div class="proj-tags"><span>Réalisation</span><span>Montage</span><span>Promotion</span><span>GRS</span></div>
+          <a href="https://www.instagram.com/reel/DWjHqBFR_zn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i> Vidéo</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Cadreur" data-tools="Premiere Pro"
+           data-gallery="Image/projets/entreprendre/simaho/simaho-cover.png,Image/projets/entreprendre/simaho/simaho-recap.mp4">
+        <div class="proj-img-wrap"><img src="Image/projets/entreprendre/simaho/simaho-cover.png" alt="Soirées Simaho" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Soirées Simaho — Captation</p>
+          <p class="proj-desc">Captation vidéo et colorimétrie des soirées Simaho à Vieux-Habitants. Cadrage et montage en collaboration avec le vidéaste Byprodmxf.</p>
+          <div class="proj-tags"><span>Captation</span><span>Colorimétrie</span><span>Byprodmxf</span></div>
+          <a href="https://www.instagram.com/reel/DVHw5MwCchK/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i> Vidéo</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Cadreur" data-tools="Premiere Pro"
+           data-gallery="Image/projets/entreprendre/pikako-chill/pikako-cover.png,Image/projets/entreprendre/pikako-chill/pikako-recap.mp4">
+        <div class="proj-img-wrap"><img src="Image/projets/entreprendre/pikako-chill/pikako-cover.png" alt="Pikako Chill" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Pikako Chill — Captation</p>
+          <p class="proj-desc">Captation vidéo de la soirée Pikako Chill pour le compte du média Zananamédia, spécialisé dans les vidéos de soirée. Cadrage de l'événement du début à la fin.</p>
+          <div class="proj-tags"><span>Captation</span><span>Événementiel</span><span>Zananamédia</span></div>
+          <a href="https://www.instagram.com/reel/DR8KwbwCH7j/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i> Vidéo</a>
+        </div>
+      </div>
+
+
+      <div class="proj-card" data-role="Monteur vidéo" data-tools="Premiere Pro"
+           data-gallery="Image/projets/entreprendre/blok-actu/blok-1.png,Image/projets/entreprendre/blok-actu/blok-2.png,Image/projets/entreprendre/blok-actu/blok-3.png,Image/projets/entreprendre/blok-actu/blok-4.png,Image/projets/entreprendre/blok-actu/rendu-final.mp4">
+        <div class="proj-img-wrap"><img src="Image/z.png" alt="BLOK Actu" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">BLOK Actu</p>
+          <p class="proj-desc">Reprise en main du média étudiant BLOK avec ma promotion. Gestion des écoutes musicales avec Cassandra Bores, veille sur les dernières sorties, création de la charte graphique (photo du meilleur clip, logo carré, couleurs adaptatives). Réalisation du micro-trottoir carnaval à but divertissant avec un message de prévention. Le média compte aujourd'hui plus de 4 000 abonnés.</p>
+          <div class="proj-tags"><span>Média</span><span>Charte graphique</span><span>Montage</span><span>Écoutes</span></div>
+          <a href="https://www.instagram.com/blok.actu/" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> @blok.actu</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Photographe / DA" data-tools="Photoshop, Lightroom"
+           data-gallery="Image/Design/Photos/photo manoah 2.jpg,Image/Design/Photos/Photo manoah.jpg,Image/Design/Photos/DSC08114.jpg,Image/Design/Photos/DSC08214.jpg">
+        <div class="proj-img-wrap"><img src="Image/Design/Photos/photo manoah 2.jpg" alt="Shooting Photographie" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Shooting Photographie</p>
+          <p class="proj-desc">Ce shooting a été réalisé dans le cadre d'une publication Instagram. L'objectif était de recréer une ambiance vintage. J'étais chargé de la direction artistique, de l'habillage de la modèle et des retouches photo.</p>
+          <div class="proj-tags"><span>Photographie</span><span>Direction artistique</span><span>Retouche</span></div>
+          <a href="https://www.instagram.com/nao_yah/" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Community Manager / DA" data-tools="Premiere Pro, Photoshop, Instagram"
+           data-gallery="Image/projets/entreprendre/instagram-naoyah/naoyah-1.jpg,Image/projets/entreprendre/instagram-naoyah/naoyah-2.jpg,Image/projets/entreprendre/instagram-naoyah/naoyah-stats.png">
+        <div class="proj-img-wrap"><img src="Image/projets/entreprendre/instagram-naoyah/naoyah-1.jpg" alt="Instagram @nao_yah" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Instagram @nao_yah — Stratégie de croissance</p>
+          <p class="proj-desc">Prise en main de mon compte Instagram pro dédié à la musique avec une vraie stratégie de contenu : vidéos d'instrumentales, photos avec direction artistique travaillée et ligne éditoriale cohérente. Résultat : passage de 243 abonnés en septembre à 528 en juin, soit +117 % de croissance organique.</p>
+          <div class="proj-tags"><span>Instagram</span><span>Stratégie de contenu</span><span>Croissance organique</span><span>Direction artistique</span></div>
+          <a href="https://www.instagram.com/nao_yah/" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> @nao_yah</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Rédacteur / Analyste" data-tools="Google Docs, Canva"
+           data-gallery="Image/projets/comprendre/ppp-cover.png">
+        <div class="proj-img-wrap"><img src="Image/projets/comprendre/ppp-cover.png" alt="Dossier PPP" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Dossier PPP — Projet Personnel et Professionnel</p>
+          <p class="proj-desc">Rédaction d'un dossier complet de réflexion sur mon parcours, mes compétences et mon projet professionnel dans le cadre du BUT MMI. Analyse de mes expériences, définition de mes objectifs et construction de mon identité professionnelle.</p>
+          <div class="proj-tags"><span>PPP</span><span>Projet professionnel</span><span>Réflexion</span><span>BUT MMI</span></div>
+          <a href="Image/projets/comprendre/dossier-ppp.pdf" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Consulter le dossier</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UE Concevoir -->
+<section id="ue-concevoir" class="ue-projects-section hidden">
+  <div class="wrap" style="padding-top:clamp(4rem,8vw,7rem);padding-bottom:clamp(4rem,8vw,7rem);">
+    <button class="ue-back" onclick="showMainSkills()"><i class="fas fa-arrow-left"></i> <span data-i18n="back.skills">Retour aux compétences</span></button>
+    <div class="ue-section-head">
+      <h2 data-i18n="ue.concevoir">Concevoir</h2>
+      <p data-i18n="ue.concevoir.sub">Projets de conception et stratégie créative</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card" data-role="Directeur artistique" data-tools="Illustrator, InDesign">
+        <div class="proj-img-wrap"><img src="Image/nova.png" alt="NOVA" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Logo & Charte NOVA</p>
+          <p class="proj-desc">Création complète d'une identité de marque pour NOVA : logo, charte graphique, déclinaisons et applications.</p>
+          <div class="proj-tags"><span>Identité visuelle</span><span>Logo</span><span>Branding</span></div>
+          <a href="https://drive.google.com/file/d/1aJ63alggTebhQrolodUPNjz7G-QhgSHz/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Graphiste" data-tools="Photoshop">
+        <div class="proj-img-wrap"><img src="Image/RVF KANN 5.jpg" alt="Cover KANN RVF" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Cover KANN — RVF</p>
+          <p class="proj-desc">Pochette d'album pour le titre « KANN » de RVF. Design réalisé entièrement sur Photoshop, sans IA.</p>
+          <div class="proj-tags"><span>Photoshop</span><span>Cover design</span><span>Musique</span></div>
+          <a href="https://youtu.be/DOn8TmqfnGg?si=NbbvyvCdO5oy0XiS" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Monteur vidéo" data-tools="Premiere Pro">
+        <div class="proj-img-wrap"><img src="Image/Dilpome.png" alt="Remise diplômes" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Vidéo Remise des Diplômes IUT</p>
+          <p class="proj-desc">Réalisation d'une vidéo récapitulative de la soirée de remise des diplômes de l'IUT. Captation et montage événementiel.</p>
+          <div class="proj-tags"><span>Montage</span><span>Événementiel</span><span>SAE 4</span></div>
+          <a href="https://drive.google.com/file/d/1tmVj2uNPVwvUBZ7G_j-3d8LT58P7hRIR/view?usp=sharing" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Monteur vidéo" data-tools="Premiere Pro"
+           data-gallery="Image/projets/entreprendre/blok-actu/blok-1.png,Image/projets/entreprendre/blok-actu/blok-2.png,Image/projets/entreprendre/blok-actu/blok-3.png,Image/projets/entreprendre/blok-actu/blok-4.png,Image/projets/entreprendre/blok-actu/rendu-final.mp4">
+        <div class="proj-img-wrap"><img src="Image/z.png" alt="BLOK Actu" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">BLOK Actu</p>
+          <p class="proj-desc">Vidéo récapitulative dynamique du festival sur Premiere Pro. Collaboration avec le média BLOK.</p>
+          <div class="proj-tags"><span>Premiere Pro</span><span>Festival</span><span>Collaboration</span></div>
+          <a href="https://drive.google.com/file/d/1eAdCgApVJX7WjwmYNHCJYfpz7N8dZm7r/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Cadreur / Monteur" data-tools="Premiere Pro"
+           data-gallery="Image/Capture d'écran 2025-09-04 233349.png,Image/projets/concevoir/bahia-beach-2025/bahia-06-juillet.mp4,Image/projets/concevoir/bahia-beach-2025/bahia-recap.mp4">
+        <div class="proj-img-wrap"><img src="Image/Capture d'écran 2025-09-04 233349.png" alt="Bahia Beach" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Bahia Beach Experience 2025</p>
+          <p class="proj-desc">Captation et montage pour l'événement Bahia Beach Experience 2025. Collaboration avec Byprodmxf &amp; Mighty Production.</p>
+          <div class="proj-tags"><span>Captation</span><span>Montage</span><span>Collaboration</span></div>
+          <a href="https://drive.google.com/file/d/1gafcsodmhgGN-CBt39wua2ZDGyD3bFa4/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Cadreur" data-tools="Premiere Pro"
+           data-gallery="Image/ yir.png,Image/projets/entreprendre/soliss-recap/soliss-cover.png">
+        <div class="proj-img-wrap"><img src="Image/ yir.png" alt="La SOLIS — Recap" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">La SOLIS — Recap</p>
+          <p class="proj-desc">Cadreur pour La SOLIS, un nouveau concept de soirée chill &amp; élégante à Basse-Terre mêlant cocktails d'exception et sélection musicale pointue. Captation en collaboration avec le vidéaste Byprodmxf.</p>
+          <div class="proj-tags"><span>Captation</span><span>Cadrage</span><span>Byprodmxf</span></div>
+          <a href="https://www.instagram.com/reel/DYamO0YP5sU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i> Vidéo</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Cadreur" data-tools="Premiere Pro"
+           data-gallery="Image/projets/entreprendre/simaho/simaho-cover.png,Image/projets/entreprendre/simaho/simaho-recap.mp4">
+        <div class="proj-img-wrap"><img src="Image/projets/entreprendre/simaho/simaho-cover.png" alt="Soirées Simaho" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Soirées Simaho — Captation</p>
+          <p class="proj-desc">Captation vidéo et colorimétrie des soirées Simaho à Vieux-Habitants. Cadrage et montage en collaboration avec le vidéaste Byprodmxf.</p>
+          <div class="proj-tags"><span>Captation</span><span>Colorimétrie</span><span>Byprodmxf</span></div>
+          <a href="https://www.instagram.com/reel/DVHw5MwCchK/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i> Vidéo</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Cadreur" data-tools="Premiere Pro"
+           data-gallery="Image/projets/entreprendre/pikako-chill/pikako-cover.png,Image/projets/entreprendre/pikako-chill/pikako-recap.mp4">
+        <div class="proj-img-wrap"><img src="Image/projets/entreprendre/pikako-chill/pikako-cover.png" alt="Pikako Chill" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Pikako Chill — Captation</p>
+          <p class="proj-desc">Captation vidéo de la soirée Pikako Chill pour le compte du média Zananamédia, spécialisé dans les vidéos de soirée. Cadrage de l'événement du début à la fin.</p>
+          <div class="proj-tags"><span>Captation</span><span>Événementiel</span><span>Zananamédia</span></div>
+          <a href="https://www.instagram.com/reel/DR8KwbwCH7j/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i> Vidéo</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Réalisateur / Monteur" data-tools="Premiere Pro">
+        <div class="proj-img-wrap"><img src="Image/projets/entreprendre/blok-actu/blok-1.png" alt="Vidéo GRS Mission Locale" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Vidéo GRS — Mission Locale</p>
+          <p class="proj-desc">Réalisation complète d'une vidéo pour la Mission Locale afin de présenter les différents métiers au sein de l'association. Tournage sur deux jours, cadrage et montage intégral sur Premiere Pro en suivant les directives de l'employeur.</p>
+          <div class="proj-tags"><span>Réalisation</span><span>Montage</span><span>Premiere Pro</span><span>Institutionnel</span></div>
+          <a href="https://drive.google.com/file/d/1GtPq3e5qGCUaBAwOew1-Jt6Y5MdFeJTX/view?usp=share_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Vidéo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UE Exprimer -->
+<section id="ue-exprimer" class="ue-projects-section hidden">
+  <div class="wrap" style="padding-top:clamp(4rem,8vw,7rem);padding-bottom:clamp(4rem,8vw,7rem);">
+    <button class="ue-back" onclick="showMainSkills()"><i class="fas fa-arrow-left"></i> <span data-i18n="back.skills">Retour aux compétences</span></button>
+    <div class="ue-section-head">
+      <h2 data-i18n="ue.exprimer">Exprimer</h2>
+      <p data-i18n="ue.exprimer.sub">Projets de communication visuelle et expression créative</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card" data-role="Vidéaste / Monteur" data-tools="Premiere Pro, iPhone">
+        <div class="proj-img-wrap"><img src="Image/projets/entreprendre/instagram-naoyah/naoyah-2.jpg" alt="Vlog A Day in My Life" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Vlog "A Day in My Life"</p>
+          <p class="proj-desc">Vlog en anglais montrant une journée d'alternant. Approche authentique et personnelle avec un storytelling fort.</p>
+          <div class="proj-tags"><span>Vlog</span><span>Anglais</span><span>Storytelling</span></div>
+          <a href="https://drive.google.com/file/d/1l6sFdzEQ6Gj4vY8DGIB1oy3qMx5zTv1L/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Graphiste" data-tools="Photoshop, IA Firefly">
+        <div class="proj-img-wrap"><img src="Image/dont wait.png" alt="Affiche Octobre Rose" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Affiche Octobre Rose</p>
+          <p class="proj-desc">Affiche de sensibilisation au cancer du sein. Réalisée sur Photoshop avec l'IA Firefly. Message fort et impactant.</p>
+          <div class="proj-tags"><span>Photoshop</span><span>IA Firefly</span><span>Sensibilisation</span></div>
+          <a href="https://drive.google.com/file/d/15ul1OKM5OjDGz1erVVQHV2cz6mZnNrua/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Graphiste" data-tools="Photoshop">
+        <div class="proj-img-wrap"><img src="Image/6888 Hunt Arnaud.jpg" alt="Six Triple Eight" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Affiche "Six Triple Eight"</p>
+          <p class="proj-desc">Affiche originale pour le film « Six Triple Eight ». Photoshop, photos de banques d'images et composition impactante.</p>
+          <div class="proj-tags"><span>Photoshop</span><span>Affiche cinéma</span><span>Composition</span></div>
+          <a href="https://drive.google.com/file/d/15c5vJLzWgPCtl-c8ZY95N-feLLigk1yd/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+      <div class="proj-card" data-role="Réalisateur / Monteur" data-tools="Premiere Pro">
+        <div class="proj-img-wrap"><img src="Image/exprimer/Plan de travail 1.jpg" alt="Silence rouge" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Silence Rouge</p>
+          <p class="proj-desc">Silence Rouge est un court-métrage monté entièrement par mes soins. L'objectif était de raconter l'histoire d'un couple toxique afin de sensibiliser aux violences conjugales.</p>
+          <div class="proj-tags"><span>Documentaire</span><span>Réalisation</span><span>Musique</span><span>Personnel</span></div>
+          <a href="https://drive.google.com/file/d/1ag09BCPPSbK9cXUNM1VpJojs4fcQ78TP/view?usp=share_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Graphiste" data-tools="Photoshop">
+        <div class="proj-img-wrap"><img src="Image/exprimer/ .jpg" alt="Vody" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Affiche prévention — Vody</p>
+          <p class="proj-desc">Affiche de prévention inspirée du média Urbania, portant sur les vody. Un message fort avec un visuel original pour sensibiliser de manière percutante.</p>
+          <div class="proj-tags"><span>Photoshop</span><span>Prévention</span><span>Affiche</span><span>Urbania</span></div>
+          <span class="proj-link disabled"><i class="fas fa-clock"></i> Prochainement</span>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Monteur vidéo" data-tools="Premiere Pro"
+           data-gallery="Image/projets/entreprendre/blok-actu/blok-1.png,Image/projets/entreprendre/blok-actu/blok-2.png,Image/projets/entreprendre/blok-actu/blok-3.png,Image/projets/entreprendre/blok-actu/blok-4.png,Image/projets/entreprendre/blok-actu/rendu-final.mp4">
+        <div class="proj-img-wrap"><img src="Image/z.png" alt="BLOK Actu" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">BLOK Actu</p>
+          <p class="proj-desc">Reprise en main du média étudiant BLOK avec ma promotion. Gestion des écoutes musicales avec Cassandra Bores, veille sur les dernières sorties, création de la charte graphique (photo du meilleur clip, logo carré, couleurs adaptatives). Réalisation du micro-trottoir carnaval à but divertissant avec un message de prévention. Le média compte aujourd'hui plus de 4 000 abonnés.</p>
+          <div class="proj-tags"><span>Média</span><span>Charte graphique</span><span>Montage</span><span>Écoutes</span></div>
+          <a href="https://drive.google.com/file/d/1eAdCgApVJX7WjwmYNHCJYfpz7N8dZm7r/view?usp=drive_link" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-drive"></i> Drive</a>
+        </div>
+      </div>
+
+      <div class="proj-card" data-role="Community Manager / DA" data-tools="Premiere Pro, Photoshop, Instagram"
+           data-gallery="Image/projets/entreprendre/instagram-naoyah/naoyah-1.jpg,Image/projets/entreprendre/instagram-naoyah/naoyah-2.jpg,Image/projets/entreprendre/instagram-naoyah/naoyah-stats.png">
+        <div class="proj-img-wrap"><img src="Image/projets/entreprendre/instagram-naoyah/naoyah-1.jpg" alt="Instagram @nao_yah" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Instagram @nao_yah — Stratégie de croissance</p>
+          <p class="proj-desc">Prise en main de mon compte Instagram pro dédié à la musique avec une vraie stratégie de contenu : vidéos d'instrumentales, photos avec direction artistique travaillée et ligne éditoriale cohérente. Résultat : passage de 243 abonnés en septembre à 528 en juin, soit +117 % de croissance organique.</p>
+          <div class="proj-tags"><span>Instagram</span><span>Stratégie de contenu</span><span>Croissance organique</span><span>Direction artistique</span></div>
+          <a href="https://www.instagram.com/nao_yah/" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> @nao_yah</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UE Développer -->
+<section id="ue-developper" class="ue-projects-section hidden">
+  <div class="wrap" style="padding-top:clamp(4rem,8vw,7rem);padding-bottom:clamp(4rem,8vw,7rem);">
+    <button class="ue-back" onclick="showMainSkills()"><i class="fas fa-arrow-left"></i> <span data-i18n="back.skills">Retour aux compétences</span></button>
+    <div class="ue-section-head">
+      <h2 data-i18n="ue.developper">Développer</h2>
+      <p data-i18n="ue.developper.sub">Projets de développement web et applications</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card" data-role="Développeur front-end" data-tools="VS Code, HTML, CSS, JavaScript">
+        <div class="proj-img-wrap"><img src="Image/portfolioi.png" alt="Portfolio web" loading="lazy"></div>
+        <div class="proj-body">
+          <p class="proj-title">Portfolio Web Personnel</p>
+          <p class="proj-desc">Développement complet d'un portfolio web en HTML, CSS et JavaScript. Animations modernes et design responsive.</p>
+          <div class="proj-tags"><span>HTML/CSS</span><span>JavaScript</span><span>Responsive</span><span>UX/UI</span></div>
+          <a href="https://naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud/" class="proj-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Voir le site</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ================================================
+     INTERFACE 2025 — VOYAGE AU CANADA
+================================================ -->
+<section id="interface" class="section-bg">
+  <div class="p-section parallax-target" data-parallax-speed="0.08">
+    <span class="section-label" data-i18n="interface.title">Interface 2025 — Voyage au Canada</span>
+    <span class="section-line" aria-hidden="true"></span>
+
+    <div class="interface-grid">
+      <div class="interface-video-wrap">
+        <video class="interface-video" controls preload="metadata" poster="Image/DSC00261 copie.jpg">
+          <source src="Image/canada/QUEBEC 2025 RECAP-1.mov" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+      </div>
+      <div class="interface-text">
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3.5vw,2.8rem);" data-i18n="interface.heading">Interface 2025</h2>
+        <p class="interface-desc" data-i18n="interface.desc">En 2025, j'ai participé au voyage Interface au Canada (Québec), une expérience enrichissante autour des innovations numériques et de la découverte culturelle.</p>
+        <p class="interface-desc" data-i18n="interface.desc2">Ce séjour m'a permis de visiter des studios créatifs, d'échanger avec des professionnels du numérique et de m'ouvrir à de nouvelles perspectives dans le domaine du design et de la communication.</p>
+        <div class="interface-tags">
+          <span>Québec 2025</span><span>Innovation</span><span>Culture</span><span>Numérique</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ================================================
+     SERVICES
+================================================ -->
+<section id="services" class="section-bg">
+  <div class="p-section parallax-target" data-parallax-speed="0.09">
+    <span class="section-label" data-i18n="services.label">Services</span>
+    <span class="section-line" aria-hidden="true"></span>
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <span class="svc-num">01</span>
+        <h3 class="svc-card-title" data-i18n="services.branding">Identité Visuelle</h3>
+        <p class="svc-card-desc">Création d'univers graphiques cohérents, du logo à la charte complète, pour une marque forte et mémorable.</p>
+        <ul class="svc-card-list">
+          <li>Logo &amp; identité</li>
+          <li>Charte graphique</li>
+          <li>Supports print &amp; digital</li>
+          <li>Déclinaisons</li>
+        </ul>
+        <a href="#contact" class="svc-card-cta" aria-label="En savoir plus sur Identité Visuelle">
+          <span data-i18n="services.cta">En savoir plus</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="svc-card">
+        <span class="svc-num">02</span>
+        <h3 class="svc-card-title" data-i18n="services.video">Montage Vidéo</h3>
+        <p class="svc-card-desc">Montage percutant et motion design pour capter l'attention, raconter une histoire et marquer les esprits.</p>
+        <ul class="svc-card-list">
+          <li>Reels &amp; stories</li>
+          <li>Recap événements</li>
+          <li>Motion graphics</li>
+          <li>Sound design</li>
+        </ul>
+        <a href="#contact" class="svc-card-cta" aria-label="En savoir plus sur Montage Vidéo">
+          <span data-i18n="services.cta">En savoir plus</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="svc-card">
+        <span class="svc-num">03</span>
+        <h3 class="svc-card-title" data-i18n="services.photo">Captation Images</h3>
+        <p class="svc-card-desc">Photographie soignée pour immortaliser vos événements, portraits et produits avec une direction artistique claire.</p>
+        <ul class="svc-card-list">
+          <li>Événements</li>
+          <li>Portraits</li>
+          <li>Produits</li>
+          <li>Reportage</li>
+        </ul>
+        <a href="#contact" class="svc-card-cta" aria-label="En savoir plus sur Captation Images">
+          <span data-i18n="services.cta">En savoir plus</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="svc-card">
+        <span class="svc-num">04</span>
+        <h3 class="svc-card-title" data-i18n="services.ai">IA Prompt</h3>
+        <p class="svc-card-desc">Intégration de l'intelligence artificielle dans le processus créatif pour générer, affiner et optimiser des visuels.</p>
+        <ul class="svc-card-list">
+          <li>Génération d'assets</li>
+          <li>Optimisation créative</li>
+          <li>Midjourney / Firefly</li>
+          <li>Direction artistique IA</li>
+        </ul>
+        <a href="#contact" class="svc-card-cta" aria-label="En savoir plus sur IA Prompt">
+          <span data-i18n="services.cta">En savoir plus</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ================================================
+     CONTACT
+================================================ -->
+<section id="contact" class="section-bg">
+  <div class="p-section">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="section-label" data-i18n="contact.label">Contact</span>
+    <span class="section-line" aria-hidden="true"></span>
+        <h2 class="section-title" style="line-height:1.05;" data-i18n="contact.heading">Travaillons<br>ensemble.</h2>
+        <p data-i18n="contact.desc">Envie de collaborer ? Envoyez-moi un message !</p>
+        <div class="contact-social">
+          <a href="https://www.linkedin.com/in/arnaud-hunt-b563b62ba" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/nao_yah/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="mailto:huntarnaud97113@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form id="contact-form">
+          <div class="form-field">
+            <label for="contact-name" class="sr-only">Nom</label>
+            <input type="text" id="contact-name" name="name" placeholder="Nom" data-i18n="contact.name" required>
+          </div>
+          <div class="form-field">
+            <label for="contact-email" class="sr-only">Email</label>
+            <input type="email" id="contact-email" name="email" placeholder="Email" data-i18n="contact.email" required>
+          </div>
+          <div class="form-field">
+            <label for="contact-message" class="sr-only">Message</label>
+            <textarea id="contact-message" name="message" placeholder="Votre message" data-i18n="contact.message" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" data-i18n="contact.send">Envoyer</button>
+          <p id="form-message" role="alert" aria-live="polite" aria-atomic="true" style="margin-top:.75rem;font-size:.8rem;color:rgba(255,255,255,.4);"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     FOOTER
+================================================ -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <span class="footer-logo">Hunt Arnaud</span>
+      <p class="footer-tagline">Designer &amp; Créateur digital<br>BUT MMI — Guadeloupe</p>
+      <span class="footer-copy">© 2026 Hunt Arnaud.<br>Tous droits réservés.</span>
+    </div>
+
+    <div class="footer-col">
+      <span class="footer-col-label" data-i18n="footer.nav">Navigation</span>
+      <a href="#about" data-i18n="nav.about">À Propos</a>
+      <a href="#skills" data-i18n="nav.skills">Compétences</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#alternance" data-i18n="nav.alternance">Alternance</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <span class="footer-col-label" data-i18n="footer.legal.label">Légal</span>
+      <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
+      <a href="cgu.html" data-i18n="footer.cgu">CGU</a>
+    </div>
+
+    <div class="footer-col">
+      <span class="footer-col-label" data-i18n="footer.social">Réseaux</span>
+      <a href="https://www.instagram.com/nao_yah/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.linkedin.com/in/arnaud-hunt-b563b62ba" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:huntarnaud97113@gmail.com">Email</a>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ================================================
+     LIGHTBOX
+================================================ -->
+<div id="lightbox" class="hidden" role="dialog" aria-modal="true" aria-label="Image agrandie">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Image précédente"><i class="fas fa-chevron-left"></i></button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Image suivante"><i class="fas fa-chevron-right"></i></button>
+  <span class="lightbox-counter" id="lightbox-counter"></span>
+</div>
+
+<!-- ================================================
+     PROJECT DETAIL MODAL
+================================================ -->
+<div id="proj-detail-modal" class="hidden" role="dialog" aria-modal="true" aria-label="Détails du projet">
+  <div class="pdm-overlay"></div>
+  <div class="pdm-box">
+    <button class="pdm-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
+    <div class="pdm-gallery">
+      <div class="pdm-gallery-track" id="pdm-gallery-track"></div>
+      <button class="pdm-gallery-prev" id="pdm-gallery-prev" aria-label="Image précédente"><i class="fas fa-chevron-left"></i></button>
+      <button class="pdm-gallery-next" id="pdm-gallery-next" aria-label="Image suivante"><i class="fas fa-chevron-right"></i></button>
+      <div class="pdm-gallery-dots" id="pdm-gallery-dots"></div>
+    </div>
+    <div class="pdm-content">
+      <h3 id="pdm-title"></h3>
+      <div class="pdm-meta">
+        <span class="pdm-meta-item" id="pdm-role"><i class="fas fa-user-tag"></i> <span></span></span>
+        <span class="pdm-meta-item" id="pdm-tools"><i class="fas fa-tools"></i> <span></span></span>
+      </div>
+      <p id="pdm-desc"></p>
+      <div id="pdm-tags" class="proj-tags"></div>
+      <a id="pdm-link" href="" class="proj-link" target="_blank" rel="noopener noreferrer"></a>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     CV MODAL
+================================================ -->
+<div id="cv-modal" class="hidden cv-force-hidden">
+  <div class="cv-modal-box">
+    <div class="cv-modal-head">
+      <h3 data-i18n="cv.title">Mon CV</h3>
+      <button class="cv-modal-close" onclick="closeCV()" aria-label="Fermer"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cv-modal-body" id="cv-preview">
+      <p data-i18n="cv.desc">Cliquez sur le bouton ci-dessous pour charger le CV</p>
+      <button id="load-cv-btn" class="btn-primary"><i class="fas fa-eye" style="margin-right:.4rem;"></i> <span data-i18n="cv.load">Charger le CV</span></button>
+    </div>
+    <div id="cv-loading" style="display:none;padding:2rem;text-align:center;">
+      <i class="fas fa-spinner fa-spin" style="font-size:1.5rem;color:rgba(255,255,255,.3);"></i>
+      <p data-i18n="cv.loading" style="margin-top:.75rem;font-size:.82rem;color:rgba(255,255,255,.35);">Chargement…</p>
+    </div>
+    <iframe id="cv-iframe" src="" frameborder="0" title="CV d'Arnaud Hunt en PDF"></iframe>
+    <div class="cv-modal-foot">
+      <a href="Image/CV/cv Arnaud Hunt numérique.pdf" class="btn-ghost" download target="_blank" rel="noopener noreferrer" data-i18n="cv.download"><i class="fas fa-download" style="margin-right:.4rem;"></i> Télécharger le CV</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     UI PERSISTANTS
+================================================ -->
+<div id="scroll-to-top" role="button" tabindex="0" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></div>
+
+<!-- sr-only helper -->
+
+
+
+
+
+<script>
+/* ============================================================
+   PARALLAX — rAF unique, GPU-friendly
+   Chaque élément [data-parallax-speed] est décalé en Y
+   proportionnellement au scroll * speed.
+   L'image about-img a un parallaxe interne (Y dans son wrapper).
+============================================================ */
+(function() {
+  'use strict';
+
+  var ticking = false;
+  var lastY   = 0;
+
+  /* Vidéo de fond : fade-in robuste sur tous navigateurs */
+  var vid = document.getElementById('video-bg');
+  if (vid) {
+    function onVidReady() {
+      if (!vid.classList.contains('loaded')) {
+        vid.classList.add('loaded');
+      }
+    }
+    // Tous les événements possibles selon navigateur/OS
+    vid.addEventListener('loadedmetadata', onVidReady);
+    vid.addEventListener('loadeddata',     onVidReady);
+    vid.addEventListener('canplay',        onVidReady);
+    vid.addEventListener('canplaythrough', onVidReady);
+    // Fallback : dès que la vidéo avance d'un frame
+    vid.addEventListener('timeupdate', onVidReady, { once: true });
+    // Déjà prête (cache navigateur)
+    if (vid.readyState >= 2) onVidReady();
+    // Forcer la lecture (iOS bloque parfois autoplay sans trigger)
+    var playPromise = vid.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function() {
+        // Autoplay bloqué — on affiche quand même la vidéo à l'opacity minimale
+        vid.classList.add('loaded');
+      });
+    }
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) vid.pause();
+      else vid.play().catch(function(){});
+    });
+  }
+
+  /* Collecte des cibles parallaxe */
+  function getTargets() {
+    return Array.from(document.querySelectorAll('[data-parallax-speed]'));
+  }
+
+  /* AOS init */
+  if (typeof AOS !== 'undefined') {
+    AOS.init({ duration: 700, once: true, offset: 80 });
+  }
+
+  var isMobile = window.innerWidth <= 768;
+  window.addEventListener('resize', function() { isMobile = window.innerWidth <= 768; });
+
+  /* Boucle principale */
+  function run() {
+    ticking = false;
+    if (isMobile) return;
+    var y = lastY;
+
+    /* Vidéo de fond — parallaxe vertical + zoom cinématique */
+    var videoBg = document.getElementById('video-bg');
+    if (videoBg) {
+      videoBg.style.transform = 'translateY(' + (y * 0.3) + 'px) scale(1.12)';
+    }
+
+    /* Sections parallaxe — centré sur le viewport pour éviter les débordements */
+    getTargets().forEach(function(el) {
+      var speed = parseFloat(el.dataset.parallaxSpeed) || 0.08;
+      var rect = el.getBoundingClientRect();
+      var center = rect.top + rect.height / 2 - window.innerHeight / 2;
+      var offset = center * speed * -1;
+      el.style.transform = 'translateY(' + offset + 'px)';
+    });
+
+    /* Parallaxe interne photo About — plus dramatique */
+    var img = document.getElementById('about-img-parallax');
+    if (img) {
+      var wrap = img.closest('.about-img-wrap');
+      if (wrap) {
+        var rect   = wrap.getBoundingClientRect();
+        var center = rect.top + rect.height / 2 - window.innerHeight / 2;
+        img.style.transform = 'translateY(' + (center * -0.28) + 'px) scale(1.06)';
+      }
+    }
+
+    /* Scroll-to-top visibility */
+    var stt = document.getElementById('scroll-to-top');
+    if (stt) {
+      if (y > 500) stt.classList.add('show');
+      else         stt.classList.remove('show');
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    lastY = window.scrollY;
+    if (!ticking) { ticking = true; requestAnimationFrame(run); }
+  }, { passive: true });
+
+  /* run au chargement */
+  document.addEventListener('DOMContentLoaded', run);
+
+  /* Scroll-to-top click + keyboard */
+  var sttBtn = document.getElementById('scroll-to-top');
+  if (sttBtn) {
+    sttBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    sttBtn.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+
+  /* Nav burger mobile */
+  var burger = document.getElementById('nav-burger');
+  if (burger) {
+    burger.addEventListener('click', function() {
+      document.getElementById('nav').classList.toggle('nav-mobile-open');
+    });
+  }
+
+  /* Fermer nav mobile au clic sur un lien */
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('nav').classList.remove('nav-mobile-open');
+    });
+  });
+
+})();
+</script>
+</body>
+</html>

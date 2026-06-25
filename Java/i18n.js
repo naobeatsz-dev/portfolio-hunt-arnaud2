@@ -1,0 +1,415 @@
+/* ==========================================================================
+   i18n.js v2 — Traduction FR / EN / ES (robuste)
+   Convention :
+     data-i18n="clé"           → remplace innerHTML (supporte le HTML)
+     data-i18n="clé" + input/textarea → remplace placeholder
+   ========================================================================== */
+
+const TRANSLATIONS = {
+
+  /* ======================================================================
+     FRANÇAIS
+  ====================================================================== */
+  fr: {
+    'page.title'           : 'Portfolio - Hunt Arnaud | Designer & Créateur digital',
+    'hero.eyebrow'         : 'Designer & Créateur digital · BUT MMI · Guadeloupe',
+    'hero.title.multiline'  : 'Design.<br>Motion.<br>Création.',
+    'hero.cta.projects'     : 'Voir mes projets',
+    'hero.cta.cv'           : 'CV',
+    'about.label'           : 'À Propos',
+    'about.heading'         : 'Hunt Arnaud',
+    'about.p2.long'         : "Étudiant en 3e année de BUT MMI (Métiers du Multimédia et de l\'Internet). Créatif passionné par le design graphique, l\'audiovisuel et la communication visuelle.",
+    'alt.label'             : 'Alternance 2024–2025',
+    'alt.role.koncept'      : 'Communication digitale & Création de contenu',
+    'alt.role.recyclerie'   : 'Communication visuelle',
+    'skills.label'          : 'Compétences BUT MMI',
+    'services.label'        : 'Services',
+    'contact.label'         : 'Contact',
+    'contact.heading'       : 'Travaillons<br>ensemble.',
+    'cv.load'               : 'Charger le CV',
+    'skip.link'            : 'Aller au contenu principal',
+    'nav.about'            : 'À Propos',
+    'nav.alternance'       : 'Alternance',
+    'nav.interface'        : 'Interface 2025',
+    'nav.services'         : 'Mes Services',
+    'nav.skills'           : 'Compétences',
+    'nav.contact'          : 'Contact',
+    'nav.a11y'             : 'Accessibilité',
+    'dot.about'            : 'À Propos',
+    'dot.alternance'       : 'Alternance',
+    'dot.interface'        : 'Interface 2025',
+    'dot.services'         : 'Mes Services',
+    'dot.skills'           : 'Compétences',
+    'dot.contact'          : 'Contact',
+    'hero.subtitle'        : 'Designer & Créateur digital',
+    'about.title'          : 'À Propos',
+    'about.p1'             : 'Bienvenue sur mon portfolio, un espace où je partage mes créations visuelles et mes projets.',
+    'about.p2'             : 'Je suis HUNT ARNAUD, étudiant en 3e année de BUT MMI, passionné par le design, la vidéo et la création de contenu.',
+    'about.formation'      : 'Ma Formation',
+    'about.cv'             : 'Voir mon CV',
+    'alt.title'            : 'Mon Alternance',
+    'alt.desc'             : 'Depuis septembre 2025, je réalise mon BUT MMI en alternance (parcours Création Numérique). J\'ai eu l\'opportunité de travailler au sein de deux structures : <strong>KOncept Business</strong> et <strong>Guadeloupe Recyclerie Solidaire</strong>.',
+    'alt.badge.koncept'    : 'KOncept Business',
+    'alt.badge.recyclerie' : 'Guadeloupe Recyclerie Solidaire',
+    'alt.badge.active'     : 'En cours · 2024–2025',
+    'alt.badge.role'       : 'Graphiste & Motion',
+    'alt.s1.title'         : 'Refonte Identité Visuelle',
+    'alt.s1.desc'          : 'Refonte complète de la charte graphique d\'un client : logo, typographie, palette de couleurs et déclinaisons print & digital.',
+    'alt.s2.title'         : 'Vidéo Promo Tech',
+    'alt.s2.desc'          : 'Production d\'une vidéo promotionnelle : storyboard, motion graphics, sound design et montage final.',
+    'alt.s3.title'         : 'Stratégie Réseaux Sociaux',
+    'alt.s3.desc'          : 'Conception de visuels et de formats animés pour les réseaux de la Recyclerie, en cohérence avec son identité solidaire.',
+    'alt.s4.desc'          : 'De nouveaux projets chez <strong>KOncept Business</strong> et <strong>Guadeloupe Recyclerie Solidaire</strong> seront ajoutés ici. Restez connectés !',
+    'alt.linkedin'         : '<i class="fab fa-linkedin"></i> En savoir plus sur LinkedIn',
+    'alt.rapport'          : '<i class="fas fa-file-alt" style="margin-right:.45rem;"></i> Rapport d\'activité',
+    'interface.title'      : 'Interface 2025 — Voyage au Canada',
+    'interface.heading'    : 'Interface 2025',
+    'interface.desc'       : 'En 2025, j\'ai participé au voyage Interface au Canada (Québec), une expérience enrichissante autour des innovations numériques et de la découverte culturelle.',
+    'interface.desc2'      : 'Ce séjour m\'a permis de visiter des studios créatifs, d\'échanger avec des professionnels du numérique et de m\'ouvrir à de nouvelles perspectives dans le domaine du design et de la communication.',
+    'interface.more'       : 'Plus de contenus',
+    'services.title'       : 'Mes Services',
+    'services.desc'        : 'Découvrez les prestations que je vous propose pour donner vie à vos projets numériques.',
+    'services.branding'    : 'Identité Visuelle',
+    'services.branding.p'  : 'Création de logos, chartes graphiques et supports pour forger une image de marque unique et mémorable.',
+    'services.video'       : 'Montage Vidéo',
+    'services.video.p'     : 'Création et montage de vidéos dynamiques pour vos réseaux et votre communication digitale.',
+    'services.photo'       : 'Captation Images',
+    'services.photo.p'     : 'Prises de vue professionnelles pour sublimer vos événements, produits ou votre équipe.',
+    'services.ai'          : 'IA Prompt',
+    'services.ai.p'        : 'Génération et optimisation d\'assets créatifs assistées par l\'Intelligence Artificielle.',
+    'services.cta'         : 'En savoir plus',
+    'skills.title'         : 'Mes Compétences',
+    'skills.desc'          : 'Découvrez mon parcours à travers les 5 Unités d\'Enseignement du BUT MMI',
+    'ue.comprendre'        : 'Comprendre',
+    'ue.comprendre.desc'   : 'Analyser les usages et les besoins des utilisateurs pour concevoir des solutions adaptées',
+    'ue.comprendre.btn'    : '5 Projets',
+    'ue.concevoir'         : 'Concevoir',
+    'ue.concevoir.desc'    : 'Concevoir de façon créative',
+    'ue.concevoir.btn'     : '9 Projets',
+    'ue.exprimer'          : 'Exprimer',
+    'ue.exprimer.desc'     : 'Exprimer un message',
+    'ue.exprimer.btn'      : '7 Projets',
+    'ue.developper'        : 'Développer',
+    'ue.developper.desc'   : 'Développer pour les médias numériques',
+    'ue.developper.btn'    : '1 Projet',
+    'ue.entreprendre'      : 'Entreprendre',
+    'ue.entreprendre.desc' : 'Entreprendre dans le secteur du numérique',
+    'ue.entreprendre.btn'  : '12 Projets',
+    'ue.comprendre.sub'    : 'Projets d\'analyse et de recherche utilisateur',
+    'ue.concevoir.sub'     : 'Projets de conception et stratégie créative',
+    'ue.exprimer.sub'      : 'Projets de communication visuelle et expression créative',
+    'ue.developper.sub'    : 'Projets de développement web et applications',
+    'ue.entreprendre.sub'  : 'Projets entrepreneuriaux, gestion d\'équipe et initiatives réelles',
+    'back.skills'          : '<i class="fas fa-arrow-left"></i> Retour aux compétences',
+    'contact.title'        : 'Contact',
+    'contact.desc'         : 'Envie de collaborer ? Envoyez-moi un message !',
+    'contact.name'         : 'Nom',
+    'contact.email'        : 'Email',
+    'contact.message'      : 'Votre message',
+    'contact.send'         : '<i class="fas fa-paper-plane"></i> Envoyer',
+    'cv.title'             : '<i class="fas fa-file-pdf"></i> Mon CV',
+    'cv.load'              : '<i class="fas fa-eye"></i> Charger le CV',
+    'cv.loading'           : 'Chargement du CV...',
+    'cv.download'          : '<i class="fas fa-download"></i> Télécharger le CV',
+    'cv.desc'              : 'Cliquez sur le bouton ci-dessous pour charger le CV',
+    'footer.nav'           : 'Navigation',
+    'footer.legal.label'   : 'Légal',
+    'footer.social'        : 'Réseaux',
+    'footer.legal'         : 'Mentions légales',
+    'footer.cgu'           : 'CGU',
+    'a11y.title'           : '<i class="fas fa-keyboard"></i> Guide d\'Accessibilité',
+    'a11y.close'           : 'J\'ai compris',
+    'formation.btn'        : '<i class="fas fa-graduation-cap"></i> Ma Formation',
+    'cv.btn'               : '<i class="fas fa-file-pdf"></i> Voir mon CV',
+  },
+
+  /* ======================================================================
+     ENGLISH
+  ====================================================================== */
+  en: {
+    'page.title'           : 'Portfolio - Hunt Arnaud | Designer & Créateur digital',
+    'hero.eyebrow'         : 'Designer & Digital Creator · BUT MMI · Guadeloupe',
+    'hero.title.multiline'  : 'Design.<br>Motion.<br>Creation.',
+    'hero.cta.projects'     : 'View my work',
+    'hero.cta.cv'           : 'CV',
+    'about.label'           : 'About',
+    'about.heading'         : 'Hunt Arnaud',
+    'about.p2.long'         : '3rd-year BUT MMI student (Multimedia & Internet). Creative mind passionate about graphic design, audiovisual production and visual communication.',
+    'alt.label'             : 'Work-Study 2024–2025',
+    'alt.role.koncept'      : 'Digital Communication & Content Creation',
+    'alt.role.recyclerie'   : 'Visual communication',
+    'skills.label'          : 'BUT MMI Skills',
+    'services.label'        : 'Services',
+    'contact.label'         : 'Contact',
+    'contact.heading'       : "Let\'s work<br>together.",
+    'cv.load'               : 'Load CV',
+    'skip.link'            : 'Skip to main content',
+    'nav.about'            : 'About',
+    'nav.alternance'       : 'Work-Study',
+    'nav.interface'        : 'Interface 2025',
+    'nav.services'         : 'My Services',
+    'nav.skills'           : 'Skills',
+    'nav.contact'          : 'Contact',
+    'nav.a11y'             : 'Accessibility',
+    'dot.about'            : 'About',
+    'dot.alternance'       : 'Work-Study',
+    'dot.interface'        : 'Interface 2025',
+    'dot.services'         : 'My Services',
+    'dot.skills'           : 'Skills',
+    'dot.contact'          : 'Contact',
+    'hero.subtitle'        : 'Designer & Créateur digital',
+    'about.title'          : 'About',
+    'about.p1'             : 'Welcome to my portfolio, a space where I share my visual creations and projects.',
+    'about.p2'             : 'I\'m HUNT ARNAUD, a 3rd-year BUT MMI student, passionate about design, video and content creation.',
+    'about.formation'      : 'My Degree',
+    'about.cv'             : 'View my CV',
+    'alt.title'            : 'My Work-Study',
+    'alt.desc'             : 'Since September 2025, I have been completing my BUT MMI through a work-study programme. I have worked within two organisations: <strong>KOncept Business</strong> and <strong>Guadeloupe Recyclerie Solidaire</strong>.',
+    'alt.badge.koncept'    : 'KOncept Business',
+    'alt.badge.recyclerie' : 'Guadeloupe Recyclerie Solidaire',
+    'alt.badge.active'     : 'Ongoing · 2024–2025',
+    'alt.badge.role'       : 'Communication digitale & Création de contenu',
+    'alt.s1.title'         : 'Visual Identity Redesign',
+    'alt.s1.desc'          : 'Complete redesign of a client\'s brand guidelines: logo, typography, colour palette and print & digital variations.',
+    'alt.s2.title'         : 'Tech Promo Video',
+    'alt.s2.desc'          : 'Production of a promotional video: storyboard, motion graphics, sound design and final editing.',
+    'alt.s3.title'         : 'Social Media Strategy',
+    'alt.s3.desc'          : 'Design of visuals and animated formats for the Recyclerie\'s social media, consistent with its solidarity-driven identity.',
+    'alt.s4.desc'          : 'New projects from <strong>KOncept Business</strong> and <strong>Guadeloupe Recyclerie Solidaire</strong> will be added here. Stay tuned!',
+    'alt.linkedin'         : '<i class="fab fa-linkedin"></i> Learn more on LinkedIn',
+    'alt.rapport'          : '<i class="fas fa-file-alt" style="margin-right:.45rem;"></i> Activity Report',
+    'interface.title'      : 'Interface 2025 — Trip to Canada',
+    'interface.heading'    : 'Interface 2025',
+    'interface.desc'       : 'In 2025, I took part in the Interface trip to Canada (Quebec), an enriching experience centred on digital innovation and cultural discovery.',
+    'interface.desc2'      : 'This trip allowed me to visit creative studios, exchange with digital professionals and open up to new perspectives in design and communication.',
+    'interface.more'       : 'More content',
+    'services.title'       : 'My Services',
+    'services.desc'        : 'Discover the services I offer to bring your digital projects to life.',
+    'services.branding'    : 'Visual Identity',
+    'services.branding.p'  : 'Logo creation, brand guidelines and assets to build a unique and memorable brand image.',
+    'services.video'       : 'Video Editing',
+    'services.video.p'     : 'Creation and editing of dynamic videos for your social media and digital communication.',
+    'services.photo'       : 'Photo & Film',
+    'services.photo.p'     : 'Professional shoots to showcase your events, products or team.',
+    'services.ai'          : 'AI Prompts',
+    'services.ai.p'        : 'Generation and optimisation of creative assets assisted by Artificial Intelligence.',
+    'services.cta'         : 'Learn more',
+    'skills.title'         : 'My Skills',
+    'skills.desc'          : 'Explore my journey through the 5 Teaching Units of the BUT MMI degree',
+    'ue.comprendre'        : 'Understand',
+    'ue.comprendre.desc'   : 'Analyse user behaviours and needs to design tailored solutions',
+    'ue.comprendre.btn'    : '5 Projects',
+    'ue.concevoir'         : 'Design',
+    'ue.concevoir.desc'    : 'Create in a creative and strategic way',
+    'ue.concevoir.btn'     : '9 Projects',
+    'ue.exprimer'          : 'Express',
+    'ue.exprimer.desc'     : 'Communicate a message through visual creation',
+    'ue.exprimer.btn'      : '7 Projects',
+    'ue.developper'        : 'Develop',
+    'ue.developper.desc'   : 'Develop for digital media',
+    'ue.developper.btn'    : '1 Project',
+    'ue.entreprendre'      : 'Entrepreneurship',
+    'ue.entreprendre.desc' : 'Start and manage projects in the digital sector',
+    'ue.entreprendre.btn'  : '12 Projects',
+    'ue.comprendre.sub'    : 'User research and analysis projects',
+    'ue.concevoir.sub'     : 'Design and creative strategy projects',
+    'ue.exprimer.sub'      : 'Visual communication and creative expression projects',
+    'ue.developper.sub'    : 'Web development and application projects',
+    'ue.entreprendre.sub'  : 'Entrepreneurial projects, team management and real-world initiatives',
+    'back.skills'          : '<i class="fas fa-arrow-left"></i> Back to skills',
+    'contact.title'        : 'Contact',
+    'contact.desc'         : 'Want to collaborate? Send me a message!',
+    'contact.name'         : 'Name',
+    'contact.email'        : 'Email',
+    'contact.message'      : 'Your message',
+    'contact.send'         : '<i class="fas fa-paper-plane"></i> Send',
+    'cv.title'             : '<i class="fas fa-file-pdf"></i> My CV',
+    'cv.load'              : '<i class="fas fa-eye"></i> Load CV',
+    'cv.loading'           : 'Loading CV...',
+    'cv.download'          : '<i class="fas fa-download"></i> Download CV',
+    'cv.desc'              : 'Click the button below to load the CV',
+    'footer.nav'           : 'Navigation',
+    'footer.legal.label'   : 'Legal',
+    'footer.social'        : 'Socials',
+    'footer.legal'         : 'Legal Notice',
+    'footer.cgu'           : 'Terms of Use',
+    'a11y.title'           : '<i class="fas fa-keyboard"></i> Accessibility Guide',
+    'a11y.close'           : 'Got it',
+    'formation.btn'        : '<i class="fas fa-graduation-cap"></i> My Degree',
+    'cv.btn'               : '<i class="fas fa-file-pdf"></i> View my CV',
+  },
+
+  /* ======================================================================
+     ESPAÑOL
+  ====================================================================== */
+  es: {
+    'page.title'           : 'Portfolio - Hunt Arnaud | Diseñador & Creador digital',
+    'hero.eyebrow'         : 'Diseñador & Creador digital · BUT MMI · Guadalupe',
+    'hero.title.multiline'  : 'Diseño.<br>Motion.<br>Creación.',
+    'hero.cta.projects'     : 'Ver mis proyectos',
+    'hero.cta.cv'           : 'CV',
+    'about.label'           : 'Sobre mí',
+    'about.heading'         : 'Hunt Arnaud',
+    'about.p2.long'         : 'Estudiante de 3er año de BUT MMI (Multimedia e Internet). Creativo apasionado por el diseño gráfico, el audiovisual y la comunicación visual.',
+    'alt.label'             : 'Alternancia 2024–2025',
+    'alt.role.koncept'      : 'Comunicación digital & Creación de contenido',
+    'alt.role.recyclerie'   : 'Comunicación visual',
+    'skills.label'          : 'Competencias BUT MMI',
+    'services.label'        : 'Servicios',
+    'contact.label'         : 'Contacto',
+    'contact.heading'       : 'Trabajemos<br>juntos.',
+    'cv.load'               : 'Cargar CV',
+    'skip.link'            : 'Ir al contenido principal',
+    'nav.about'            : 'Sobre mí',
+    'nav.alternance'       : 'Alternancia',
+    'nav.interface'        : 'Interface 2025',
+    'nav.services'         : 'Mis Servicios',
+    'nav.skills'           : 'Competencias',
+    'nav.contact'          : 'Contacto',
+    'nav.a11y'             : 'Accesibilidad',
+    'dot.about'            : 'Sobre mí',
+    'dot.alternance'       : 'Alternancia',
+    'dot.interface'        : 'Interface 2025',
+    'dot.services'         : 'Mis Servicios',
+    'dot.skills'           : 'Competencias',
+    'dot.contact'          : 'Contacto',
+    'hero.subtitle'        : 'Diseñador & Creador digital',
+    'about.title'          : 'Sobre mí',
+    'about.p1'             : 'Bienvenido a mi portfolio, un espacio donde comparto mis creaciones visuales y proyectos.',
+    'about.p2'             : 'Soy HUNT ARNAUD, estudiante de 3er año de BUT MMI, apasionado por el diseño, el vídeo y la creación de contenido.',
+    'about.formation'      : 'Mi Formación',
+    'about.cv'             : 'Ver mi CV',
+    'alt.title'            : 'Mi Alternancia',
+    'alt.desc'             : 'Desde septiembre de 2025, realizo mi BUT MMI en alternancia. He tenido la oportunidad de trabajar en dos estructuras: <strong>KOncept Business</strong> y <strong>Guadeloupe Recyclerie Solidaire</strong>.',
+    'alt.badge.koncept'    : 'KOncept Business',
+    'alt.badge.recyclerie' : 'Guadeloupe Recyclerie Solidaire',
+    'alt.badge.active'     : 'En curso · 2024–2025',
+    'alt.badge.role'       : 'Comunicación digital & Creación de contenido',
+    'alt.s1.title'         : 'Rediseño de Identidad Visual',
+    'alt.s1.desc'          : 'Rediseño completo de la identidad gráfica de un cliente: logotipo, tipografía, paleta de colores y variaciones print y digital.',
+    'alt.s2.title'         : 'Vídeo Promocional Tech',
+    'alt.s2.desc'          : 'Producción de un vídeo promocional: storyboard, motion graphics, diseño sonoro y montaje final.',
+    'alt.s3.title'         : 'Estrategia de Redes Sociales',
+    'alt.s3.desc'          : 'Diseño de visuales y formatos animados para las redes de la Recyclerie, en coherencia con su identidad solidaria.',
+    'alt.s4.desc'          : 'Nuevos proyectos de <strong>KOncept Business</strong> y <strong>Guadeloupe Recyclerie Solidaire</strong> se añadirán aquí. ¡Síguenos!',
+    'alt.linkedin'         : '<i class="fab fa-linkedin"></i> Más información en LinkedIn',
+    'alt.rapport'          : '<i class="fas fa-file-alt" style="margin-right:.45rem;"></i> Informe de actividad',
+    'interface.title'      : 'Interface 2025 — Viaje a Canadá',
+    'interface.heading'    : 'Interface 2025',
+    'interface.desc'       : 'En 2025, participé en el viaje Interface a Canadá (Quebec), una experiencia enriquecedora sobre innovación digital y descubrimiento cultural.',
+    'interface.desc2'      : 'Este viaje me permitió visitar estudios creativos, intercambiar con profesionales del sector digital y abrirme a nuevas perspectivas en el ámbito del diseño y la comunicación.',
+    'interface.more'       : 'Más contenido',
+    'services.title'       : 'Mis Servicios',
+    'services.desc'        : 'Descubre los servicios que ofrezco para dar vida a tus proyectos digitales.',
+    'services.branding'    : 'Identidad Visual',
+    'services.branding.p'  : 'Creación de logotipos, manuales de marca y soportes para forjar una imagen única y memorable.',
+    'services.video'       : 'Montaje de Vídeo',
+    'services.video.p'     : 'Creación y montaje de vídeos dinámicos para tus redes sociales y comunicación digital.',
+    'services.photo'       : 'Captación de Imágenes',
+    'services.photo.p'     : 'Rodajes profesionales para realzar tus eventos, productos o equipo.',
+    'services.ai'          : 'Prompts de IA',
+    'services.ai.p'        : 'Generación y optimización de assets creativos asistidos por Inteligencia Artificial.',
+    'services.cta'         : 'Más información',
+    'skills.title'         : 'Mis Competencias',
+    'skills.desc'          : 'Descubre mi trayectoria a través de las 5 Unidades de Enseñanza del BUT MMI',
+    'ue.comprendre'        : 'Comprender',
+    'ue.comprendre.desc'   : 'Analizar los usos y necesidades de los usuarios para diseñar soluciones adaptadas',
+    'ue.comprendre.btn'    : '5 Proyectos',
+    'ue.concevoir'         : 'Concebir',
+    'ue.concevoir.desc'    : 'Concebir de forma creativa',
+    'ue.concevoir.btn'     : '9 Proyectos',
+    'ue.exprimer'          : 'Expresar',
+    'ue.exprimer.desc'     : 'Comunicar un mensaje a través de la creación visual',
+    'ue.exprimer.btn'      : '7 Proyectos',
+    'ue.developper'        : 'Desarrollar',
+    'ue.developper.desc'   : 'Desarrollar para los medios digitales',
+    'ue.developper.btn'    : '1 Proyecto',
+    'ue.entreprendre'      : 'Emprender',
+    'ue.entreprendre.desc' : 'Emprender en el sector digital',
+    'ue.entreprendre.btn'  : '12 Proyectos',
+    'ue.comprendre.sub'    : 'Proyectos de análisis e investigación de usuarios',
+    'ue.concevoir.sub'     : 'Proyectos de concepción y estrategia creativa',
+    'ue.exprimer.sub'      : 'Proyectos de comunicación visual y expresión creativa',
+    'ue.developper.sub'    : 'Proyectos de desarrollo web y aplicaciones',
+    'ue.entreprendre.sub'  : 'Proyectos emprendedores, gestión de equipos e iniciativas reales',
+    'back.skills'          : '<i class="fas fa-arrow-left"></i> Volver a competencias',
+    'contact.title'        : 'Contacto',
+    'contact.desc'         : '¿Quieres colaborar? ¡Envíame un mensaje!',
+    'contact.name'         : 'Nombre',
+    'contact.email'        : 'Correo electrónico',
+    'contact.message'      : 'Tu mensaje',
+    'contact.send'         : '<i class="fas fa-paper-plane"></i> Enviar',
+    'cv.title'             : '<i class="fas fa-file-pdf"></i> Mi CV',
+    'cv.load'              : '<i class="fas fa-eye"></i> Cargar CV',
+    'cv.loading'           : 'Cargando CV...',
+    'cv.download'          : '<i class="fas fa-download"></i> Descargar CV',
+    'cv.desc'              : 'Haz clic en el botón de abajo para cargar el CV',
+    'footer.nav'           : 'Navegación',
+    'footer.legal.label'   : 'Legal',
+    'footer.social'        : 'Redes',
+    'footer.legal'         : 'Aviso Legal',
+    'footer.cgu'           : 'Condiciones de Uso',
+    'a11y.title'           : '<i class="fas fa-keyboard"></i> Guía de Accesibilidad',
+    'a11y.close'           : 'Entendido',
+    'formation.btn'        : '<i class="fas fa-graduation-cap"></i> Mi Formación',
+    'cv.btn'               : '<i class="fas fa-file-pdf"></i> Ver mi CV',
+  }
+};
+
+/* ==========================================================================
+   Moteur de traduction — v2 robuste
+   ========================================================================== */
+let currentLang = localStorage.getItem('portfolio-lang') || 'fr';
+
+function applyTranslations(lang) {
+  const t = TRANSLATIONS[lang];
+  if (!t) return;
+  currentLang = lang;
+  localStorage.setItem('portfolio-lang', lang);
+  document.documentElement.lang = lang;
+
+  if (t['page.title']) document.title = t['page.title'];
+
+  /* 1. Éléments [data-i18n-title] → seulement le title, pas le contenu */
+  document.querySelectorAll('[data-i18n-title]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-title');
+    var val = t[key];
+    if (val === undefined) return;
+    el.setAttribute('title', val);
+    el.setAttribute('aria-label', val);
+  });
+
+  /* 2. Éléments [data-i18n] classiques */
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    var val = t[key];
+    if (val === undefined) return;
+
+    var tag = el.tagName.toLowerCase();
+
+    /* inputs / textareas → placeholder uniquement */
+    if (tag === 'input' || tag === 'textarea') {
+      el.setAttribute('placeholder', val);
+      return;
+    }
+
+    /* Tout le reste → innerHTML (icônes FA + gras inclus dans les valeurs) */
+    el.innerHTML = val;
+  });
+
+  /* Mise à jour visuelle des boutons du switcher */
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    var active = btn.dataset.lang === lang;
+    btn.classList.toggle('lang-btn--active', active);
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+}
+
+/* Expose globalement — accessible depuis les onclick HTML */
+window.applyTranslations = applyTranslations;
+window.getCurrentLang    = function() { return currentLang; };
+
+/* Init automatique au DOMContentLoaded */
+document.addEventListener('DOMContentLoaded', function() {
+  applyTranslations(currentLang);
+});

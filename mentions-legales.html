@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions Légales — Hunt Arnaud</title>
+  <meta name="description" content="Mentions légales du portfolio de Hunt Arnaud, designer graphique.">
+  <meta name="author" content="Hunt Arnaud">
+  <meta name="theme-color" content="#080808">
+  <link rel="canonical" href="https://naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud/mentions-legales.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mentions Légales — Hunt Arnaud">
+  <meta property="og:url" content="https://naobeatsz-dev.github.io/Portfolio-Hunt-Arnaud/mentions-legales.html">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/portfolio.css">
+  <script src="Java/Java.js?v=14" defer></script>
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <div id="video-bg-wrap" aria-hidden="true">
+    <video id="video-bg" autoplay muted loop playsinline preload="auto"></video>
+    <script>
+      (function(){
+        // ⬇️ REMPLACE LES CHEMINS CI-DESSOUS PAR TES VRAIS FICHIERS VIDÉO
+        // v[0] = vidéo fond mode sombre  (ex: 'Image/ma-video-sombre.mp4')
+        // v[1] = vidéo fond mode clair   (ex: 'Image/ma-video-claire.mp4')
+        var v=[
+          'CHEMIN_VIDEO_SOMBRE',   // ← mode sombre
+          'CHEMIN_VIDEO_CLAIRE'    // ← mode clair
+        ];
+        var el=document.getElementById('video-bg');
+        var s=document.createElement('source');
+        s.type='video/mp4';
+        s.src=localStorage.getItem('portfolio-theme')==='light'?v[1]:v[0|(Math.random()*v.length)];
+        el.appendChild(s);
+      })();
+    </script>
+    <div id="video-overlay"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo" aria-label="Retour au portfolio">
+      <i class="fas fa-arrow-left" style="margin-right:.5rem;font-size:.65rem;opacity:.6;"></i>Hunt Arnaud
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#about">À Propos</a>
+      <a href="index.html#skills">Compétences</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#alternance">Alternance</a>
+      <a href="index.html#contact" class="nav-cta">Contact →</a>
+    </div>
+    <div id="lang-switcher" role="group" aria-label="Sélection de langue">
+      <button class="lang-btn lang-btn--active" data-lang="fr" aria-pressed="true">FR</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <button id="theme-toggle" aria-label="Basculer le thème"><i class="fas fa-sun"></i></button>
+    <button id="nav-burger" class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="legal-page">
+    <div class="legal-wrap">
+
+      <!-- FRANÇAIS -->
+      <div class="lang-block visible" id="block-fr">
+        <span class="legal-updated">Mis à jour — Juin 2025</span>
+        <h1 class="legal-h1">Mentions<br>Légales</h1>
+        <div class="legal-body">
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">01</span>
+              <span class="legal-item-title">Éditeur du site</span>
+            </div>
+            <p><strong>Nom :</strong> Hunt Arnaud</p>
+            <p><strong>Statut :</strong> Étudiant en création numérique / Designer Graphique</p>
+            <p><strong>Email :</strong> arnaud.hunt@email.com</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">02</span>
+              <span class="legal-item-title">Hébergement</span>
+            </div>
+            <p>Ce site est hébergé par <strong>GitHub Pages</strong> — San Francisco, CA 94107, États-Unis. <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">pages.github.com</a></p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">03</span>
+              <span class="legal-item-title">Propriété intellectuelle</span>
+            </div>
+            <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
+            <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen utilisé, est interdite sauf autorisation écrite préalable de Hunt Arnaud.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">04</span>
+              <span class="legal-item-title">Données personnelles (RGPD)</span>
+            </div>
+            <p>Vous pouvez visiter ce site sans avoir à décliner votre identité. Le formulaire de contact peut requérir certaines informations (nom, email) uniquement pour permettre une réponse. Ces données ne sont ni stockées, ni vendues, ni utilisées à des fins commerciales.</p>
+            <p>Vous disposez d'un droit d'accès, de rectification et d'opposition aux données vous concernant. Contactez-moi via le formulaire de contact pour l'exercer.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">05</span>
+              <span class="legal-item-title">Cookies</span>
+            </div>
+            <p>Ce site utilise uniquement des cookies techniques (préférences de langue et de thème) stockés localement dans votre navigateur. Aucun cookie de traçage publicitaire n'est utilisé.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">06</span>
+              <span class="legal-item-title">Liens hypertextes</span>
+            </div>
+            <p>Ce site contient des liens vers des sites externes. Hunt Arnaud n'est pas responsable du contenu de ces sites tiers.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGLISH -->
+      <div class="lang-block" id="block-en">
+        <span class="legal-updated">Updated — June 2025</span>
+        <h1 class="legal-h1">Legal<br>Notice</h1>
+        <div class="legal-body">
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">01</span>
+              <span class="legal-item-title">Website Publisher</span>
+            </div>
+            <p><strong>Name:</strong> Hunt Arnaud</p>
+            <p><strong>Status:</strong> Digital Creation Student / Graphic Designer</p>
+            <p><strong>Email:</strong> arnaud.hunt@email.com</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">02</span>
+              <span class="legal-item-title">Hosting</span>
+            </div>
+            <p>This website is hosted by <strong>GitHub Pages</strong> — San Francisco, CA 94107, United States. <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">pages.github.com</a></p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">03</span>
+              <span class="legal-item-title">Intellectual Property</span>
+            </div>
+            <p>All content on this site is protected under French and international copyright and intellectual property law. All reproduction rights are reserved.</p>
+            <p>Any reproduction, representation, modification, publication or adaptation of any element of this site, by any means, is prohibited without the prior written consent of Hunt Arnaud.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">04</span>
+              <span class="legal-item-title">Personal Data (GDPR)</span>
+            </div>
+            <p>You may browse this website without disclosing your identity. The contact form may require certain information (name, email) solely to provide a response. This data is neither stored, sold, nor used for commercial purposes.</p>
+            <p>You have the right to access, rectify and object to data concerning you. Contact me via the contact form to exercise this right.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">05</span>
+              <span class="legal-item-title">Cookies</span>
+            </div>
+            <p>This site only uses technical cookies (language and theme preferences) stored locally in your browser. No advertising tracking cookies are used.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">06</span>
+              <span class="legal-item-title">External Links</span>
+            </div>
+            <p>This site contains links to external websites. Hunt Arnaud is not responsible for the content of these third-party sites.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESPAÑOL -->
+      <div class="lang-block" id="block-es">
+        <span class="legal-updated">Actualizado — Junio 2025</span>
+        <h1 class="legal-h1">Aviso<br>Legal</h1>
+        <div class="legal-body">
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">01</span>
+              <span class="legal-item-title">Editor del sitio</span>
+            </div>
+            <p><strong>Nombre:</strong> Hunt Arnaud</p>
+            <p><strong>Condición:</strong> Estudiante en creación digital / Diseñador Gráfico</p>
+            <p><strong>Correo:</strong> arnaud.hunt@email.com</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">02</span>
+              <span class="legal-item-title">Alojamiento</span>
+            </div>
+            <p>Este sitio está alojado por <strong>GitHub Pages</strong> — San Francisco, CA 94107, Estados Unidos. <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">pages.github.com</a></p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">03</span>
+              <span class="legal-item-title">Propiedad intelectual</span>
+            </div>
+            <p>Todo el contenido de este sitio está protegido por la legislación francesa e internacional sobre derechos de autor y propiedad intelectual. Todos los derechos de reproducción están reservados.</p>
+            <p>Cualquier reproducción, representación, modificación, publicación o adaptación de cualquier elemento del sitio, por cualquier medio, está prohibida sin el consentimiento previo y por escrito de Hunt Arnaud.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">04</span>
+              <span class="legal-item-title">Datos personales (RGPD)</span>
+            </div>
+            <p>Puede visitar este sitio sin revelar su identidad. El formulario de contacto puede requerir cierta información (nombre, correo) únicamente para proporcionar una respuesta. Estos datos no se almacenan, venden ni utilizan con fines comerciales.</p>
+            <p>Tiene derecho a acceder, rectificar y oponerse a los datos que le conciernen. Contácteme a través del formulario de contacto para ejercerlo.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">05</span>
+              <span class="legal-item-title">Cookies</span>
+            </div>
+            <p>Este sitio solo utiliza cookies técnicas (preferencias de idioma y tema) almacenadas localmente en su navegador. No se utilizan cookies de seguimiento publicitario.</p>
+          </div>
+          <div class="legal-item">
+            <div class="legal-item-head">
+              <span class="legal-item-num">06</span>
+              <span class="legal-item-title">Enlaces externos</span>
+            </div>
+            <p>Este sitio contiene enlaces a sitios externos. Hunt Arnaud no es responsable del contenido de estos sitios de terceros.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.legal-wrap -->
+  </main>
+
+  <script>
+    function switchLegalLang(lang) {
+      document.querySelectorAll('.lang-block').forEach(function(b) { b.classList.remove('visible'); });
+      var b = document.getElementById('block-' + lang);
+      if (b) b.classList.add('visible');
+      document.querySelectorAll('#lang-switcher .lang-btn').forEach(function(btn) {
+        var active = btn.dataset.lang === lang;
+        btn.classList.toggle('lang-btn--active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem('portfolio-lang', lang);
+    }
+    document.querySelectorAll('#lang-switcher .lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() { switchLegalLang(btn.dataset.lang); });
+    });
+    switchLegalLang(localStorage.getItem('portfolio-lang') || 'fr');
+  </script>
+
+</body>
+</html>
