@@ -186,11 +186,12 @@ function initializeVideo() {
     const video = document.getElementById('video-bg');
     if (!video) return;
 
-    // La source est posee par le script inline dans le HTML.
-    // On ne la remplace jamais ici - on declenche juste le chargement.
+    // La source est injectée en différé (après window.load) par le script
+    // inline dans le HTML — on ne force plus load() ici pour ne pas
+    // concurrencer le chargement initial de la page.
     video.muted = true;
     video.playsInline = true;
-    video.load();
+    if (video.querySelector('source')) video.load();
 
     video.addEventListener('loadeddata', function onLoaded() {
         video.classList.add('loaded');

@@ -47,7 +47,7 @@
 <!-- i18n -->
 <script src="Java/i18n.js" defer></script>
 <!-- JS principal -->
-<script src="Java/Java.js?v=17" defer></script>
+<script src="Java/Java.js?v=18" defer></script>
 <!-- AOS — chargement différé -->
 <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
@@ -85,12 +85,31 @@
   <video id="video-bg" autoplay muted loop playsinline preload="none"></video>
   <script>
     (function(){
-      var v=['Image/INSTA_1.mp4','Image/vidéo/NAOYAH X ATOX PLAYDITUNE.mp4'];
       var el=document.getElementById('video-bg');
-      var s=document.createElement('source');
-      s.type='video/mp4';
-      s.src=v[Math.floor(Math.random()*v.length)];
-      el.appendChild(s);
+      var conn=navigator.connection||{};
+      /* Pas de vidéo de fond en mode économie de données ou connexion très lente */
+      if(conn.saveData||/(^|-)2g$/.test(conn.effectiveType||''))return;
+      var isMobile=window.innerWidth<=768;
+      /* Mobile : uniquement la vidéo légère (2,9 Mo). Desktop : aléatoire. */
+      var v=isMobile
+        ?['Image/optimized/bg-insta.mp4']
+        :['Image/optimized/bg-insta.mp4','Image/optimized/bg-naoyah-atox.mp4'];
+      function inject(){
+        var s=document.createElement('source');
+        s.type='video/mp4';
+        s.src=v[Math.floor(Math.random()*v.length)];
+        el.appendChild(s);
+        el.load();
+        el.play().catch(function(){});
+      }
+      /* Différé après le chargement complet : la vidéo ne concurrence
+         plus les polices, le CSS et les images du premier écran */
+      function scheduleInject(){
+        if('requestIdleCallback' in window)requestIdleCallback(inject,{timeout:2500});
+        else setTimeout(inject,600);
+      }
+      if(document.readyState==='complete')scheduleInject();
+      else window.addEventListener('load',scheduleInject);
     })();
   </script>
   <div id="video-overlay"></div>
@@ -1111,12 +1130,15 @@ document.querySelectorAll('.proj-link i, .proj-link .fas, .proj-link .fab').forE
     // Déjà prête (cache navigateur)
     if (vid.readyState >= 2) onVidReady();
     // Forcer la lecture (iOS bloque parfois autoplay sans trigger)
-    var playPromise = vid.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(function() {
-        // Autoplay bloqué — on affiche quand même la vidéo à l'opacity minimale
-        vid.classList.add('loaded');
-      });
+    // Seulement si une source est déjà injectée — le chargement est différé
+    if (vid.querySelector('source')) {
+      var playPromise = vid.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function() {
+          // Autoplay bloqué — on affiche quand même la vidéo à l'opacity minimale
+          vid.classList.add('loaded');
+        });
+      }
     }
     document.addEventListener('visibilitychange', function() {
       if (document.hidden) vid.pause();
