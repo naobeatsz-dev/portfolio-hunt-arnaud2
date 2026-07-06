@@ -2571,3 +2571,137 @@ body.light-mode .interface-carousel-dot.active { background: rgba(17,17,16,.8); 
   .interface-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .interface-carousel-btn { width: 36px; height: 36px; }
 }
+
+/* ============================================================
+   20. EFFETS PREMIUM — progress bar, marquee, stats,
+       spotlight, magnetic, scramble, confetti
+============================================================ */
+
+/* --- Barre de progression de scroll --- */
+#scroll-progress {
+  position: fixed; top: 0; left: 0;
+  height: 2.5px; width: 0%;
+  background: linear-gradient(90deg, #ff5f14, #ffa040);
+  z-index: 10001;
+  pointer-events: none;
+  transition: width .1s linear;
+  box-shadow: 0 0 12px rgba(255, 95, 20, .45);
+}
+
+/* --- Marquee défilant --- */
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(.9rem, 2vw, 1.4rem) 0;
+  position: relative; z-index: 10;
+  background: rgba(8,8,8,.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.marquee-track {
+  display: flex; align-items: center;
+  gap: clamp(1.4rem, 3vw, 2.6rem);
+  width: max-content;
+  animation: marquee-scroll 26s linear infinite;
+  will-change: transform;
+}
+.marquee-track span {
+  font-family: var(--font-title);
+  font-size: clamp(1.3rem, 3.2vw, 2.4rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text);
+  white-space: nowrap;
+}
+.marquee-outline {
+  color: transparent !important;
+  -webkit-text-stroke: 1px rgba(245,245,242,.55);
+}
+.marquee-dot {
+  font-size: clamp(.7rem, 1.4vw, 1rem) !important;
+  color: #ff5f14 !important;
+}
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+body.light-mode .marquee { background: rgba(245,245,242,.35); }
+body.light-mode .marquee-outline { -webkit-text-stroke-color: rgba(17,17,16,.5); }
+
+/* --- Stats --- */
+#stats .p-section { padding-top: clamp(1.5rem, 3vw, 2.5rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: center;
+}
+.stat { display: flex; flex-direction: column; gap: .45rem; }
+.stat-num {
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  line-height: 1;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.stat-label {
+  font-size: .75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --- Spotlight sur cartes (suit la souris) --- */
+.spotlight::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .35s ease;
+  background: radial-gradient(
+    340px circle at var(--sx, 50%) var(--sy, 50%),
+    rgba(255, 95, 20, .13),
+    transparent 65%
+  );
+  z-index: 1;
+}
+.spotlight:hover::after { opacity: 1; }
+
+/* --- Boutons magnétiques --- */
+.magnetic {
+  display: inline-block;
+  transition: transform .2s cubic-bezier(.2, .6, .3, 1);
+  will-change: transform;
+}
+
+/* --- Hero scramble --- */
+.hero-rotate-word.scrambling { color: rgba(245,245,242,.85); }
+body.light-mode .hero-rotate-word.scrambling { color: rgba(245,245,242,.85); }
+
+/* --- Confetti (easter egg Konami) --- */
+.confetti-piece {
+  position: fixed;
+  top: -16px;
+  width: 8px; height: 14px;
+  z-index: 10002;
+  pointer-events: none;
+  border-radius: 2px;
+  animation: confetti-fall linear forwards;
+}
+@keyframes confetti-fall {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(108vh) rotate(720deg); opacity: .85; }
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  #scroll-progress { transition: none; }
+  .magnetic { transition: none; }
+  .confetti-piece { display: none; }
+}

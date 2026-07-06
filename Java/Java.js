@@ -133,6 +133,11 @@ function initializePortfolio() {
     initUETabs();
     initInterfaceCarousel();
     initHeroRotate();
+    initScrollProgress();
+    initMagneticButtons();
+    initSpotlightCards();
+    initStatsCounter();
+    initKonami();
     if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true, offset: 80 });
     console.log('Portfolio initialisé avec succès');
 }
@@ -1203,7 +1208,7 @@ function initProjectDetails() {
 }
 
 // ===============================
-// HERO — TEXTE ROTATIF
+// HERO — TEXTE ROTATIF (effet scramble / décodage)
 // ===============================
 function initHeroRotate() {
     var el = document.getElementById('hero-rotate');
@@ -1218,22 +1223,71 @@ function initHeroRotate() {
         return wordsByLang[lang] || wordsByLang.fr;
     }
     var idx = 0;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    setInterval(function() {
-        el.classList.add('fade-out');
-        setTimeout(function() {
+    // Mode réduit : simple remplacement de texte, sans animation
+    if (reduced) {
+        setInterval(function() {
             var words = getWords();
             idx = (idx + 1) % words.length;
             el.textContent = words[idx];
-            el.classList.remove('fade-out');
-            el.classList.add('fade-in');
-            requestAnimationFrame(function() {
-                requestAnimationFrame(function() {
-                    el.classList.remove('fade-in');
-                });
+        }, 2500);
+        return;
+    }
+
+    var CHARS = '!<>-_/[]{}—=+*^?#$%&';
+    var scrambleRAF = null;
+
+    function scrambleTo(newWord) {
+        var oldWord = el.textContent;
+        var length = Math.max(oldWord.length, newWord.length);
+        var frame = 0;
+        // Chaque lettre a une fenêtre [start, end] pendant laquelle elle est brouillée
+        var queue = [];
+        for (var i = 0; i < length; i++) {
+            queue.push({
+                to: newWord[i] || '',
+                start: Math.floor(Math.random() * 14),
+                end: Math.floor(Math.random() * 14) + 14,
+                char: ''
             });
-        }, 400);
-    }, 2500);
+        }
+        el.classList.add('scrambling');
+        cancelAnimationFrame(scrambleRAF);
+
+        function update() {
+            var output = '';
+            var complete = 0;
+            for (var i = 0; i < queue.length; i++) {
+                var q = queue[i];
+                if (frame >= q.end) {
+                    complete++;
+                    output += q.to;
+                } else if (frame >= q.start) {
+                    if (!q.char || Math.random() < 0.28) {
+                        q.char = CHARS[Math.floor(Math.random() * CHARS.length)];
+                    }
+                    output += q.char;
+                } else {
+                    output += (oldWord[i] || '');
+                }
+            }
+            el.textContent = output;
+            if (complete === queue.length) {
+                el.classList.remove('scrambling');
+            } else {
+                frame++;
+                scrambleRAF = requestAnimationFrame(update);
+            }
+        }
+        update();
+    }
+
+    setInterval(function() {
+        var words = getWords();
+        idx = (idx + 1) % words.length;
+        scrambleTo(words[idx]);
+    }, 3000);
 }
 
 // (liens actifs gérés dans _runScrollEffects ci-dessus)
@@ -1836,3 +1890,142 @@ function initReveal() {
         if (e.target.closest('.lang-btn')) setTimeout(updateBtnLabels, 50);
     });
 }());
+
+// ===============================
+// BARRE DE PROGRESSION DE SCROLL
+// ===============================
+function initScrollProgress() {
+    var bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+    var pending = false;
+
+    function update() {
+        pending = false;
+        var doc = document.documentElement;
+        var max = doc.scrollHeight - window.innerHeight;
+        var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+        bar.style.width = pct + '%';
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!pending) { pending = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+}
+
+// ===============================
+// BOUTONS MAGNÉTIQUES
+// ===============================
+function initMagneticButtons() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return; // pas d'effet sur tactile
+
+    var STRENGTH = 0.35;
+    document.querySelectorAll('.btn-primary, .btn-ghost, .nav-cta, .svc-card-cta').forEach(function (btn) {
+        btn.classList.add('magnetic');
+
+        btn.addEventListener('mousemove', function (e) {
+            var rect = btn.getBoundingClientRect();
+            var x = e.clientX - rect.left - rect.width / 2;
+            var y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = 'translate(' + (x * STRENGTH) + 'px,' + (y * STRENGTH) + 'px)';
+        });
+
+        btn.addEventListener('mouseleave', function () {
+            btn.style.transform = '';
+        });
+    });
+}
+
+// ===============================
+// SPOTLIGHT SUR CARTES (suit la souris)
+// ===============================
+function initSpotlightCards() {
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    document.querySelectorAll('.svc-card, .alt-card, .proj-card').forEach(function (card) {
+        card.classList.add('spotlight');
+        card.addEventListener('mousemove', function (e) {
+            var rect = card.getBoundingClientRect();
+            card.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+            card.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+        });
+    });
+}
+
+// ===============================
+// COMPTEURS ANIMÉS (STATS)
+// ===============================
+function initStatsCounter() {
+    var nums = document.querySelectorAll('.stat-num[data-count]');
+    if (!nums.length) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var DURATION = 1600;
+
+    function animate(el) {
+        var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+        var suffix = el.getAttribute('data-suffix') || '';
+        if (reduced) { el.textContent = target + suffix; return; }
+        var start = null;
+
+        function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min(1, (ts - start) / DURATION);
+            // easing easeOutExpo
+            var eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            el.textContent = Math.round(eased * target) + (progress === 1 ? suffix : '');
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
+    var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            animate(entry.target);
+            obs.unobserve(entry.target);
+        });
+    }, { threshold: 0.5 });
+
+    nums.forEach(function (el) { obs.observe(el); });
+}
+
+// ===============================
+// EASTER EGG — CODE KONAMI (↑↑↓↓←→←→BA)
+// ===============================
+function initKonami() {
+    var SEQUENCE = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+    var pos = 0;
+
+    document.addEventListener('keydown', function (e) {
+        var key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+        if (key === SEQUENCE[pos]) {
+            pos++;
+            if (pos === SEQUENCE.length) {
+                pos = 0;
+                launchConfetti();
+                showNotification('⚡ Mode créatif activé — merci d\'avoir trouvé le secret !', 'success');
+            }
+        } else {
+            pos = key === SEQUENCE[0] ? 1 : 0;
+        }
+    });
+}
+
+function launchConfetti() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var COLORS = ['#ff5f14', '#ffa040', '#f5f5f2', '#ff8c42', '#ffd166'];
+    var COUNT = 90;
+    for (var i = 0; i < COUNT; i++) {
+        var piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = (Math.random() * 100) + 'vw';
+        piece.style.background = COLORS[Math.floor(Math.random() * COLORS.length)];
+        piece.style.animationDuration = (2.2 + Math.random() * 2) + 's';
+        piece.style.animationDelay = (Math.random() * 0.6) + 's';
+        piece.style.width = (6 + Math.random() * 6) + 'px';
+        piece.style.height = (10 + Math.random() * 8) + 'px';
+        document.body.appendChild(piece);
+        setTimeout(function (p) { return function () { p.remove(); }; }(piece), 5200);
+    }
+}

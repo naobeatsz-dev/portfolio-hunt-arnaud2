@@ -47,7 +47,7 @@
 <!-- i18n -->
 <script src="Java/i18n.js" defer></script>
 <!-- JS principal -->
-<script src="Java/Java.js?v=16" defer></script>
+<script src="Java/Java.js?v=17" defer></script>
 <!-- AOS — chargement différé -->
 <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
@@ -71,6 +71,9 @@
 <!-- ================================================
      NAV
 ================================================ -->
+<!-- Barre de progression de scroll -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
 <!-- Grain -->
 <div class="grain" aria-hidden="true"></div>
 
@@ -137,7 +140,21 @@
   </div>
 </section>
 
-<hr class="sep">
+<!-- Marquee défilant -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Design</span><span class="marquee-dot">✦</span>
+    <span class="marquee-outline">Vidéo</span><span class="marquee-dot">✦</span>
+    <span>Motion</span><span class="marquee-dot">✦</span>
+    <span class="marquee-outline">Musique</span><span class="marquee-dot">✦</span>
+    <span>Création</span><span class="marquee-dot">✦</span>
+    <span>Design</span><span class="marquee-dot">✦</span>
+    <span class="marquee-outline">Vidéo</span><span class="marquee-dot">✦</span>
+    <span>Motion</span><span class="marquee-dot">✦</span>
+    <span class="marquee-outline">Musique</span><span class="marquee-dot">✦</span>
+    <span>Création</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
 
 <!-- ================================================
      ABOUT
@@ -158,6 +175,32 @@
           <a href="https://www.butmmi.fr" class="btn-ghost" target="_blank" rel="noopener noreferrer" data-i18n="about.formation">Ma Formation</a>
           <button class="btn-primary" onclick="openCV()" data-i18n="about.cv" aria-label="Voir mon CV">Voir mon CV</button>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     STATS
+================================================ -->
+<section id="stats" class="section-bg" aria-label="Chiffres clés">
+  <div class="p-section">
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat-num" data-count="3">0</span>
+        <span class="stat-label" data-i18n="stats.years">Années de formation</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="36" data-suffix="+">0</span>
+        <span class="stat-label" data-i18n="stats.projects">Projets réalisés</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="2">0</span>
+        <span class="stat-label" data-i18n="stats.alternances">Entreprises en alternance</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="3">0</span>
+        <span class="stat-label" data-i18n="stats.langs">Langues parlées</span>
       </div>
     </div>
   </div>
